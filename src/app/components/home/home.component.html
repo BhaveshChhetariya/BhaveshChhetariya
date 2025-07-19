@@ -1,31 +1,75 @@
 <!-- Hero Section -->
 <section id="home" class="hero">
-  <div class="hero-content">
-    <h1 class="animate-text">Bhavesh Chhetariya</h1>
-    <h2 class="animate-text-delay">Full Stack Developer</h2>
-    <p class="animate-text-delay-2">Building innovative web solutions with modern technologies</p>
-    <div class="hero-buttons">
-      <a (click)="scrollToSection('contact')" class="btn primary-btn">Get In Touch</a>
-      <a (click)="scrollToSection('projects')" class="btn secondary-btn">View My Work</a>
-    </div>
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
   </div>
-  <div class="hero-animation">
-    <!-- Rive animation will be loaded here -->
-    <canvas #heroRiveCanvas width="400" height="400"></canvas>
+  
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="animate-fade-up">Bhavesh Chhetariya</h1>
+        <h2 class="animate-fade-up-delay-1">Full Stack Developer</h2>
+        <p class="animate-fade-up-delay-2">Building innovative web solutions with modern technologies that solve real-world problems and deliver exceptional user experiences.</p>
+        <div class="hero-buttons animate-fade-up-delay-3">
+          <a (click)="scrollToSection('contact')" class="btn btn-primary">Get In Touch</a>
+          <a (click)="scrollToSection('projects')" class="btn btn-secondary">View My Work</a>
+        </div>
+        
+        <div class="hero-social animate-fade-up-delay-3">
+          <a href="https://github.com/username" target="_blank" class="social-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/username" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://twitter.com/username" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-animation animate-scale">
+        <div class="animation-wrapper">
+          <canvas #heroRiveCanvas width="400" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-down">
+      <a (click)="scrollToSection('about')">
+        <span class="mouse">
+          <span class="wheel"></span>
+        </span>
+        <span class="scroll-text">Scroll Down</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- About Section -->
-<app-about id="about"></app-about>
+<section id="about" class="section bg-light-alt">
+  <app-about></app-about>
+</section>
 
 <!-- Experience Section -->
-<app-experience id="experience"></app-experience>
+<section id="experience" class="section">
+  <app-experience></app-experience>
+</section>
 
 <!-- Skills Section -->
-<app-skills id="skills"></app-skills>
+<section id="skills" class="section bg-light-alt">
+  <app-skills></app-skills>
+</section>
 
 <!-- Projects Section -->
-<app-projects id="projects"></app-projects>
+<section id="projects" class="section">
+  <app-projects></app-projects>
+</section>
 
 <!-- Contact Section -->
-<app-contact id="contact"></app-contact>
+<section id="contact" class="section bg-light-alt">
+  <app-contact></app-contact>
+</section>

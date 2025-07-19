@@ -1,4 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Color Theme Variables */
+:root {
+  /* Primary Colors */
+  --primary-color: #6c63ff;
+  --primary-light: #a594ff;
+  --primary-dark: #4b45b2;
+  
+  /* Secondary Colors */
+  --secondary-color: #ff6584;
+  --secondary-light: #ff8fa3;
+  --secondary-dark: #d14d69;
+  
+  /* Accent Colors */
+  --accent-color: #00d9ff;
+  --accent-light: #73e9ff;
+  --accent-dark: #00a3c4;
+  
+  /* Neutral Colors */
+  --bg-light: #ffffff;
+  --bg-light-alt: #f8f9fa;
+  --bg-dark: #121212;
+  --bg-dark-alt: #1e1e1e;
+  
+  /* Text Colors */
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --text-muted: #6c757d;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  --gradient-secondary: linear-gradient(45deg, var(--secondary-color), var(--primary-light));
+  --gradient-dark: linear-gradient(45deg, var(--bg-dark), var(--bg-dark-alt));
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.2);
+  
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,19 +68,22 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #333;
+  color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
+  background-color: var(--bg-light);
 }
 
 a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  transition: var(--transition-normal);
 }
 
 ul {
@@ -35,90 +99,16 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Utility Classes */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
 }
 
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  border-radius: 5px;
-  font-weight: 500;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.primary-btn {
-  background: linear-gradient(45deg, #4776E6, #8E54E9);
-  color: #fff;
-}
-
-.secondary-btn {
-  background-color: transparent;
-  border: 2px solid #4776E6;
-  color: #4776E6;
-}
-
-/* Animation Classes */
-.animate-text {
-  animation: fadeInUp 1s ease;
-}
-
-.animate-text-delay {
-  animation: fadeInUp 1s ease 0.3s forwards;
-  opacity: 0;
-}
-
-.animate-text-delay-2 {
-  animation: fadeInUp 1s ease 0.6s forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Cursor Styles */
-.cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: rgba(142, 84, 233, 0.5);
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, background-color 0.3s;
-  
-  &.hover {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(142, 84, 233, 0.3);
-  }
-}
-
-/* Main Content Styles */
-main {
-  min-height: calc(100vh - 80px);
-}
-
-/* Responsive Typography */
 h1 {
   font-size: 2.5rem;
   
@@ -143,9 +133,263 @@ h3 {
   }
 }
 
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+
+.bg-light-alt {
+  background-color: var(--bg-light-alt);
+}
+
+.bg-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.bg-dark-alt {
+  background-color: var(--bg-dark-alt);
+  color: var(--text-light);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+  color: var(--text-light);
+}
+
+.bg-gradient-secondary {
+  background: var(--gradient-secondary);
+  color: var(--text-light);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: var(--transition-normal);
+  text-align: center;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  
+  &:hover {
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+  }
+}
+
+.btn-accent {
+  background: var(--gradient-secondary);
+  color: var(--text-light);
+  
+  &:hover {
+    box-shadow: 0 5px 15px rgba(255, 101, 132, 0.4);
+  }
+}
+
+.btn-lg {
+  padding: 14px 30px;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animate-fade-up-delay-1 {
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.animate-fade-up-delay-2 {
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+.animate-fade-up-delay-3 {
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.9s forwards;
+}
+
+.animate-scale {
+  animation: scale 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Cursor Styles */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(108, 99, 255, 0.5);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  
+  &.hover {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(108, 99, 255, 0.3);
+  }
+}
+
+/* Main Content Styles */
+main {
+  min-height: calc(100vh - 80px);
+}
+
 /* Hide cursor on touch devices */
 @media (hover: none) {
   .cursor {
     display: none;
   }
+}
+
+/* Responsive Spacing */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .section-title {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Smooth scrolling for the whole page */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
