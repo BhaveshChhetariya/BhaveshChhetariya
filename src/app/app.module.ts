@@ -16,11 +16,6 @@ import { CursorComponent } from './shared/cursor/cursor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'experience', component: ExperienceComponent },
-  { path: 'skills', component: SkillsComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '' }
 ];
 

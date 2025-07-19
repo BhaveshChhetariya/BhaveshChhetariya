@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angula
 import { ScrollService } from '../../services/scroll.service';
 import { Router } from '@angular/router';
 
-// Import Rive properly to avoid declaration issues
+// Import Rive properly
 import * as rive from '@rive-app/canvas';
 
 @Component({
@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // Initialize smooth scrolling
-    this.scrollService.init();
+    // We don't need to initialize here as it's already done in AppComponent
+    // this.scrollService.init();
   }
 
   ngAfterViewInit(): void {
@@ -38,8 +39,46 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
     
     try {
+      // Create a simple animation as a fallback since we don't have the actual Rive file
+      const canvas = this.heroRiveCanvas.nativeElement;
+      const ctx = canvas.getContext('2d');
+      
+      if (ctx) {
+        // Simple animation as fallback
+        let hue = 0;
+        const animate = () => {
+          hue = (hue + 1) % 360;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          // Draw a colorful gradient background
+          const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+          gradient.addColorStop(0, `hsl(${hue}, 100%, 60%)`);
+          gradient.addColorStop(1, `hsl(${hue + 60}, 100%, 60%)`);
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          
+          // Draw some animated shapes
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+          ctx.beginPath();
+          ctx.arc(
+            canvas.width / 2 + Math.sin(Date.now() / 1000) * 50, 
+            canvas.height / 2 + Math.cos(Date.now() / 1000) * 50, 
+            50, 0, Math.PI * 2
+          );
+          ctx.fill();
+          
+          requestAnimationFrame(animate);
+        };
+        
+        animate();
+        console.log('Fallback animation started (Rive file not found)');
+      }
+      
+      // Try to load Rive animation if available
+      // Commented out until we have a valid Rive file
+      /*
       this.heroRive = new rive.Rive({
-        src: 'assets/animations/hero-animation.riv', // Update with your actual Rive file path
+        src: 'assets/animations/hero-animation.riv',
         canvas: this.heroRiveCanvas.nativeElement,
         autoplay: true,
         stateMachines: 'State Machine 1',
@@ -51,8 +90,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
           console.error('Rive animation error:', err);
         }
       });
+      */
     } catch (error) {
-      console.error('Error initializing Rive animation:', error);
+      console.error('Error initializing animation:', error);
     }
   }
 
