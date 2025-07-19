@@ -5,28 +5,60 @@
     <div class="shape shape-2"></div>
     <div class="shape shape-3"></div>
     <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+    <div class="shape shape-6"></div>
   </div>
   
   <div class="container">
     <div class="hero-content">
       <div class="hero-text">
+        <div class="hero-greeting animate-fade-up">
+          <span class="greeting-line"></span>
+          <span class="greeting-text">Hello, I'm</span>
+        </div>
+        
         <h1 class="animate-fade-up">Bhavesh Chhetariya</h1>
-        <h2 class="animate-fade-up-delay-1">Full Stack Developer</h2>
+        
+        <div class="hero-job-title animate-fade-up-delay-1">
+          <h2>Full Stack Developer</h2>
+          <div class="typing-indicator">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        
         <p class="animate-fade-up-delay-2">Building innovative web solutions with modern technologies that solve real-world problems and deliver exceptional user experiences.</p>
+        
+        <div class="hero-tech-stack animate-fade-up-delay-2">
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">AWS</span>
+        </div>
+        
         <div class="hero-buttons animate-fade-up-delay-3">
-          <a (click)="scrollToSection('contact')" class="btn btn-primary">Get In Touch</a>
-          <a (click)="scrollToSection('projects')" class="btn btn-secondary">View My Work</a>
+          <a (click)="scrollToSection('contact')" class="btn btn-primary">
+            <span>Get In Touch</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a (click)="scrollToSection('projects')" class="btn btn-secondary">
+            <span>View My Work</span>
+            <i class="fas fa-eye"></i>
+          </a>
         </div>
         
         <div class="hero-social animate-fade-up-delay-3">
-          <a href="https://github.com/username" target="_blank" class="social-icon">
+          <a href="https://github.com/username" target="_blank" class="social-icon" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/username" target="_blank" class="social-icon">
+          <a href="https://linkedin.com/in/username" target="_blank" class="social-icon" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://twitter.com/username" target="_blank" class="social-icon">
+          <a href="https://twitter.com/username" target="_blank" class="social-icon" aria-label="Twitter">
             <i class="fab fa-twitter"></i>
+          </a>
+          <a href="mailto:email@example.com" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
           </a>
         </div>
       </div>
@@ -34,6 +66,9 @@
       <div class="hero-animation animate-scale">
         <div class="animation-wrapper">
           <canvas #heroRiveCanvas width="400" height="400"></canvas>
+          <div class="animation-overlay">
+            <div class="blob"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -46,6 +81,12 @@
         <span class="scroll-text">Scroll Down</span>
       </a>
     </div>
+  </div>
+  
+  <div class="hero-bottom-wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="var(--bg-light-alt)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
   </div>
 </section>
 

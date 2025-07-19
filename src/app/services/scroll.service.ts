@@ -26,11 +26,6 @@ export class ScrollService implements OnDestroy {
       this.lenis = new Lenis({
         duration: 1.0,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        mouseMultiplier: 1,
-        smoothTouch: false,
         touchMultiplier: 2,
         infinite: false,
         lerp: 0.1,

@@ -1,28 +1,53 @@
 <div class="container">
-  <h2 class="section-title">About Me</h2>
+  <div class="section-header">
+    <span class="section-subtitle">Get To Know</span>
+    <h2 class="section-title">About Me</h2>
+    <div class="section-description">
+      <p>Here you will find more information about me, what I do, and my current skills in terms of programming and technology</p>
+    </div>
+  </div>
   
   <div class="about-content">
     <div class="about-image">
-      <div class="image-wrapper">
-        <div class="image-placeholder">
-          <span>BC</span>
+      <div class="image-frame">
+        <div class="image-wrapper">
+          <div class="image-placeholder">
+            <span>BC</span>
+          </div>
+          <!-- If you have an actual image, use this instead -->
+          <!-- <img src="assets/images/profile.jpg" alt="Bhavesh Chhetariya"> -->
         </div>
-        <!-- If you have an actual image, use this instead -->
-        <!-- <img src="assets/images/profile.jpg" alt="Bhavesh Chhetariya"> -->
+        <div class="frame-decoration frame-decoration-1"></div>
+        <div class="frame-decoration frame-decoration-2"></div>
       </div>
       
       <div class="about-stats">
         <div class="stat-item">
-          <span class="stat-number">5+</span>
-          <span class="stat-label">Years Experience</span>
+          <div class="stat-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
         </div>
         <div class="stat-item">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Projects Completed</span>
+          <div class="stat-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
         </div>
         <div class="stat-item">
-          <span class="stat-number">30+</span>
-          <span class="stat-label">Happy Clients</span>
+          <div class="stat-icon">
+            <i class="fas fa-smile"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">30+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
         </div>
       </div>
     </div>
@@ -81,6 +106,9 @@
       <div class="about-cta">
         <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">
           <i class="fas fa-download"></i> Download Resume
+        </a>
+        <a (click)="scrollToSection('contact')" class="btn btn-secondary">
+          <i class="fas fa-paper-plane"></i> Contact Me
         </a>
       </div>
     </div>

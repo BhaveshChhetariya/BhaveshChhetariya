@@ -1,8 +1,14 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, Renderer2 } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ScrollService } from '../../services/scroll.service';
+
+interface NavItem {
+  id: string;
+  name: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-header',
@@ -13,14 +19,28 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isScrolled = false;
   isMobileMenuOpen = false;
   activeSection = 'home';
+  isDarkMode = false;
   private destroy$ = new Subject<void>();
+  
+  navItems: NavItem[] = [
+    { id: 'home', name: 'Home', icon: 'fas fa-home' },
+    { id: 'about', name: 'About', icon: 'fas fa-user' },
+    { id: 'experience', name: 'Experience', icon: 'fas fa-briefcase' },
+    { id: 'skills', name: 'Skills', icon: 'fas fa-code' },
+    { id: 'projects', name: 'Projects', icon: 'fas fa-project-diagram' },
+    { id: 'contact', name: 'Contact', icon: 'fas fa-envelope' }
+  ];
 
   constructor(
     private router: Router,
-    private scrollService: ScrollService
+    private scrollService: ScrollService,
+    private renderer: Renderer2
   ) { }
 
   ngOnInit(): void {
+    // Check for saved theme preference
+    this.checkThemePreference();
+    
     // Track route changes to update active link
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
@@ -29,6 +49,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       const path = event.url.split('/')[1] || 'home';
       this.activeSection = path;
     });
+    
+    // Track scroll position to update active section
+    this.setupScrollSpy();
   }
 
   ngOnDestroy(): void {
@@ -46,16 +69,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     
     // Prevent body scrolling when menu is open
     if (this.isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      this.renderer.addClass(document.body, 'no-scroll');
     } else {
-      document.body.style.overflow = '';
+      this.renderer.removeClass(document.body, 'no-scroll');
     }
   }
 
   closeMobileMenu() {
     if (this.isMobileMenuOpen) {
       this.isMobileMenuOpen = false;
-      document.body.style.overflow = '';
+      this.renderer.removeClass(document.body, 'no-scroll');
     }
   }
 
@@ -82,12 +105,68 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (element) {
       // Use the scroll service for smooth scrolling
       this.scrollService.scrollTo(element, {
-        offset: -80, // Adjust offset to account for header height
+        offset: -100, // Adjust offset to account for header height
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
       });
     } else {
       console.warn(`Element with id "${elementId}" not found`);
     }
+  }
+  
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    
+    if (this.isDarkMode) {
+      this.renderer.addClass(document.body, 'dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      this.renderer.removeClass(document.body, 'dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+  
+  private checkThemePreference() {
+    // Check localStorage
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme === 'dark') {
+      this.isDarkMode = true;
+      this.renderer.addClass(document.body, 'dark-theme');
+    } else if (savedTheme === 'light') {
+      this.isDarkMode = false;
+    } else {
+      // Check system preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      this.isDarkMode = prefersDark;
+      
+      if (prefersDark) {
+        this.renderer.addClass(document.body, 'dark-theme');
+      }
+    }
+  }
+  
+  private setupScrollSpy() {
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY + 200; // Add offset for header
+      
+      // Find all section elements
+      const sections = this.navItems.map(item => document.getElementById(item.id)).filter(Boolean);
+      
+      // Find the current section
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section) {
+          const sectionTop = section.offsetTop;
+          
+          if (scrollPosition >= sectionTop) {
+            if (this.activeSection !== section.id) {
+              this.activeSection = section.id;
+            }
+            break;
+          }
+        }
+      }
+    }, { passive: true });
   }
 }

@@ -1,20 +1,41 @@
-<header [ngClass]="{'scrolled': isScrolled}">
-  <nav>
+<header [ngClass]="{'scrolled': isScrolled, 'menu-open': isMobileMenuOpen}">
+  <div class="header-container">
     <div class="logo">
-      <span>BC</span>
+      <a (click)="scrollToSection('home')">
+        <div class="logo-icon">BC</div>
+        <span class="logo-text">Bhavesh<span class="highlight">Chhetariya</span></span>
+      </a>
     </div>
-    <ul class="nav-links" [ngClass]="{'active': isMobileMenuOpen}">
-      <li><a (click)="scrollToSection('home')" [ngClass]="{'active': activeSection === 'home'}">Home</a></li>
-      <li><a (click)="scrollToSection('about')" [ngClass]="{'active': activeSection === 'about'}">About</a></li>
-      <li><a (click)="scrollToSection('experience')" [ngClass]="{'active': activeSection === 'experience'}">Experience</a></li>
-      <li><a (click)="scrollToSection('skills')" [ngClass]="{'active': activeSection === 'skills'}">Skills</a></li>
-      <li><a (click)="scrollToSection('projects')" [ngClass]="{'active': activeSection === 'projects'}">Projects</a></li>
-      <li><a (click)="scrollToSection('contact')" [ngClass]="{'active': activeSection === 'contact'}">Contact</a></li>
-    </ul>
-    <div class="hamburger" [ngClass]="{'active': isMobileMenuOpen}" (click)="toggleMobileMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+    
+    <nav>
+      <ul class="nav-links" [ngClass]="{'active': isMobileMenuOpen}">
+        <li *ngFor="let item of navItems">
+          <a (click)="scrollToSection(item.id)" 
+             [ngClass]="{'active': activeSection === item.id}">
+            <span class="nav-icon"><i [class]="item.icon"></i></span>
+            <span class="nav-text">{{item.name}}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="header-actions">
+      <button class="theme-toggle" (click)="toggleTheme()">
+        <i class="fas" [ngClass]="isDarkMode ? 'fa-sun' : 'fa-moon'"></i>
+      </button>
+      
+      <a href="assets/resume.pdf" target="_blank" class="resume-btn">
+        <span>Resume</span>
+        <i class="fas fa-download"></i>
+      </a>
+      
+      <div class="hamburger" [ngClass]="{'active': isMobileMenuOpen}" (click)="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-  </nav>
+  </div>
+  
+  <div class="mobile-overlay" *ngIf="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
 </header>

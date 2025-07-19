@@ -59,6 +59,23 @@
   --radius-full: 9999px;
 }
 
+/* Dark Theme Variables */
+.dark-theme {
+  /* Neutral Colors */
+  --bg-light: #121212;
+  --bg-light-alt: #1e1e1e;
+  
+  /* Text Colors */
+  --text-dark: #f8f9fa;
+  --text-muted: #adb5bd;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
 /* Base Styles */
 * {
   margin: 0;
@@ -77,6 +94,11 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   background-color: var(--bg-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 a {
@@ -100,6 +122,7 @@ button {
   border: none;
   outline: none;
   font-family: 'Poppins', sans-serif;
+  background: none;
 }
 
 /* Typography */
@@ -392,4 +415,81 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* Glass Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hover Card Effect */
+.hover-card {
+  transition: var(--transition-normal);
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Pill Badge */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: var(--bg-light-alt);
+  color: var(--text-muted);
+  
+  &.badge-primary {
+    background-color: var(--primary-light);
+    color: var(--text-light);
+  }
+  
+  &.badge-secondary {
+    background-color: var(--secondary-light);
+    color: var(--text-light);
+  }
+  
+  &.badge-accent {
+    background-color: var(--accent-light);
+    color: var(--text-light);
+  }
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: var(--spacing-lg) 0;
+}
+
+.dark-theme {
+  .divider {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-card {
+    background: rgba(30, 30, 30, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .badge {
+    background-color: var(--bg-dark-alt);
+  }
 }
