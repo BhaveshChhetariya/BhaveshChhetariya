@@ -13,6 +13,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CursorComponent } from './shared/cursor/cursor.component';
+import { LazyImageDirective } from './shared/directives/lazy-image.directive';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
     SkillsComponent,
     ProjectsComponent,
     ContactComponent,
-    CursorComponent
+    CursorComponent,
+    LazyImageDirective
   ],
   imports: [
     BrowserModule,

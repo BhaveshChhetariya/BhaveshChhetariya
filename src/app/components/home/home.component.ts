@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { ScrollService } from '../../services/scroll.service';
 import { Router } from '@angular/router';
+import { SocialLinksService, SocialLink } from '../../services/social-links.service';
 
 // Import Rive properly
 import * as rive from '@rive-app/canvas';
@@ -14,14 +15,25 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('heroRiveCanvas') heroRiveCanvas!: ElementRef;
   private heroRive: any;
   private animationFrameId: number | null = null;
+  
+  socialLinks: SocialLink[] = [];
+  techStack = [
+    { name: 'Angular', icon: 'fab fa-angular' },
+    { name: 'React', icon: 'fab fa-react' },
+    { name: 'Node.js', icon: 'fab fa-node-js' },
+    { name: 'MongoDB', icon: 'fas fa-database' },
+    { name: 'AWS', icon: 'fab fa-aws' }
+  ];
 
   constructor(
     private scrollService: ScrollService,
-    private router: Router
+    private router: Router,
+    private socialLinksService: SocialLinksService
   ) { }
 
   ngOnInit(): void {
-    // We don't need to initialize scroll service here as it's already done in AppComponent
+    // Get social links
+    this.socialLinks = this.socialLinksService.socialLinks;
   }
 
   ngAfterViewInit(): void {

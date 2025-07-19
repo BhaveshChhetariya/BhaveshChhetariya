@@ -29,11 +29,10 @@
         <p class="animate-fade-up-delay-2">Building innovative web solutions with modern technologies that solve real-world problems and deliver exceptional user experiences.</p>
         
         <div class="hero-tech-stack animate-fade-up-delay-2">
-          <span class="tech-badge">Angular</span>
-          <span class="tech-badge">React</span>
-          <span class="tech-badge">Node.js</span>
-          <span class="tech-badge">MongoDB</span>
-          <span class="tech-badge">AWS</span>
+          <span *ngFor="let tech of techStack" class="tech-badge" [attr.title]="tech.name">
+            <i [class]="tech.icon"></i>
+            <span>{{tech.name}}</span>
+          </span>
         </div>
         
         <div class="hero-buttons animate-fade-up-delay-3">
@@ -48,17 +47,13 @@
         </div>
         
         <div class="hero-social animate-fade-up-delay-3">
-          <a href="https://github.com/username" target="_blank" class="social-icon" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/username" target="_blank" class="social-icon" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://twitter.com/username" target="_blank" class="social-icon" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="mailto:email@example.com" class="social-icon" aria-label="Email">
-            <i class="fas fa-envelope"></i>
+          <a *ngFor="let social of socialLinks" 
+             [href]="social.url" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="social-icon" 
+             [attr.aria-label]="social.name">
+            <i [class]="social.icon"></i>
           </a>
         </div>
       </div>

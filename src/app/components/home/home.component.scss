@@ -202,6 +202,9 @@ p {
   margin-bottom: var(--spacing-lg);
   
   .tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: 0.4rem 1rem;
     border-radius: var(--radius-full);
     background-color: var(--bg-light-alt);
@@ -210,10 +213,15 @@ p {
     font-weight: 500;
     transition: var(--transition-normal);
     
+    i {
+      font-size: 1rem;
+    }
+    
     &:hover {
       background-color: var(--primary-light);
       color: var(--text-light);
       transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
     }
   }
   
