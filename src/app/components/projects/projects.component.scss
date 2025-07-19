@@ -1,6 +1,7 @@
 .projects-section {
   padding: 100px 0;
-  background-color: #ffffff;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
 .container {
@@ -23,7 +24,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #4776E6, #8E54E9);
+    background: var(--gradient-primary);
   }
 }
 
@@ -42,15 +43,15 @@
 }
 
 .project-card {
-  background-color: #fff;
+  background-color: var(--bg-light-alt);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -72,8 +73,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(45deg, #4776E6, #8E54E9);
-    color: white;
+    background: var(--gradient-primary);
+    color: var(--text-light);
     font-size: 4rem;
     font-weight: bold;
   }
@@ -86,13 +87,13 @@
 .project-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--text-dark);
 }
 
 .project-description {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--text-muted);
   margin-bottom: 15px;
 }
 
@@ -104,12 +105,17 @@
 }
 
 .tech-tag {
-  background-color: #f0f0f0;
-  color: #555;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-muted);
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  .dark-theme & {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 .project-links {
@@ -121,13 +127,13 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: #4776E6;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
   
   &:hover {
-    color: #8E54E9;
+    color: var(--primary-light);
   }
   
   i {

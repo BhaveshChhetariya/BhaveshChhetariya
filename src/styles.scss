@@ -4,18 +4,27 @@
 :root {
   /* Primary Colors */
   --primary-color: #6c63ff;
+  --primary-color-rgb: 108, 99, 255;
   --primary-light: #a594ff;
+  --primary-light-rgb: 165, 148, 255;
   --primary-dark: #4b45b2;
+  --primary-dark-rgb: 75, 69, 178;
   
   /* Secondary Colors */
   --secondary-color: #ff6584;
+  --secondary-color-rgb: 255, 101, 132;
   --secondary-light: #ff8fa3;
+  --secondary-light-rgb: 255, 143, 163;
   --secondary-dark: #d14d69;
+  --secondary-dark-rgb: 209, 77, 105;
   
   /* Accent Colors */
   --accent-color: #00d9ff;
+  --accent-color-rgb: 0, 217, 255;
   --accent-light: #73e9ff;
+  --accent-light-rgb: 115, 233, 255;
   --accent-dark: #00a3c4;
+  --accent-dark-rgb: 0, 163, 196;
   
   /* Neutral Colors */
   --bg-light: #ffffff;
@@ -479,6 +488,7 @@ html.lenis {
   margin: var(--spacing-lg) 0;
 }
 
+/* Dark Theme Specific Styles */
 .dark-theme {
   .divider {
     background-color: rgba(255, 255, 255, 0.1);
@@ -491,5 +501,42 @@ html.lenis {
   
   .badge {
     background-color: var(--bg-dark-alt);
+  }
+  
+  /* Card backgrounds */
+  .card, .project-card, .skill-card, .experience-card, .timeline-content, .skill-category, .contact-info, .contact-form {
+    background-color: var(--bg-dark-alt);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Form elements */
+  input, textarea, select {
+    background-color: var(--bg-dark-alt);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    
+    &::placeholder {
+      color: var(--text-muted);
+    }
+  }
+  
+  /* Button styles */
+  .btn-secondary {
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+    
+    &:hover {
+      background-color: var(--primary-light);
+    }
+  }
+  
+  /* Icons */
+  .icon {
+    color: var(--text-light);
+  }
+  
+  /* Skill bars */
+  .skill-bar {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }

@@ -1,6 +1,7 @@
 .experience-section {
   padding: 100px 0;
-  background-color: #ffffff;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
 .container {
@@ -23,7 +24,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #4776E6, #8E54E9);
+    background: var(--gradient-primary);
   }
 }
 
@@ -39,7 +40,7 @@
     bottom: 0;
     left: 20px;
     width: 4px;
-    background: linear-gradient(180deg, #4776E6, #8E54E9);
+    background: var(--gradient-primary);
     
     @media (min-width: 768px) {
       left: 50%;
@@ -59,7 +60,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #8E54E9;
+    background-color: var(--primary-color);
     left: 12px;
     top: 30px;
     
@@ -83,27 +84,28 @@
 }
 
 .timeline-content {
-  background-color: #f9f9f9;
+  background-color: var(--bg-light-alt);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .job-title {
   font-size: 1.5rem;
   margin-bottom: 5px;
-  color: #333;
+  color: var(--text-dark);
 }
 
 .company {
   font-size: 1.2rem;
   margin-bottom: 5px;
-  color: #555;
+  color: var(--text-muted);
 }
 
 .period {
   font-size: 1rem;
-  color: #8E54E9;
+  color: var(--primary-color);
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -111,4 +113,5 @@
 .description {
   font-size: 1rem;
   line-height: 1.6;
+  color: var(--text-dark);
 }

@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ScrollService } from './services/scroll.service';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +16,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private scrollService: ScrollService
+    private scrollService: ScrollService,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit() {
+    // Initialize theme service (this will apply the saved theme)
+    // The theme service constructor handles the initialization
+    
     // Initialize scroll service
     this.scrollService.init();
     

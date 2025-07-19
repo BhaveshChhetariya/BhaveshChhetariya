@@ -1,6 +1,7 @@
 .contact-section {
   padding: 100px 0;
-  background-color: #f9f9f9;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
 .container {
@@ -23,7 +24,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #4776E6, #8E54E9);
+    background: var(--gradient-primary);
   }
 }
 
@@ -38,15 +39,16 @@
 }
 
 .contact-info {
-  background-color: #fff;
+  background-color: var(--bg-light-alt);
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.3s ease, color 0.3s ease;
   
   h3 {
     font-size: 1.5rem;
     margin-bottom: 25px;
-    color: #333;
+    color: var(--text-dark);
     position: relative;
     
     &:after {
@@ -56,7 +58,7 @@
       left: 0;
       width: 50px;
       height: 3px;
-      background: linear-gradient(90deg, #4776E6, #8E54E9);
+      background: var(--gradient-primary);
     }
   }
 }
@@ -68,7 +70,7 @@
   
   i {
     font-size: 1.2rem;
-    color: #8E54E9;
+    color: var(--primary-color);
     margin-right: 15px;
     width: 20px;
     text-align: center;
@@ -76,7 +78,7 @@
   
   span {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-dark);
   }
 }
 
@@ -93,27 +95,28 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #4776E6, #8E54E9);
-  color: #fff;
+  background: var(--gradient-primary);
+  color: var(--text-light);
   font-size: 1.2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-md);
   }
 }
 
 .contact-form {
-  background-color: #fff;
+  background-color: var(--bg-light-alt);
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.3s ease, color 0.3s ease;
   
   h3 {
     font-size: 1.5rem;
     margin-bottom: 25px;
-    color: #333;
+    color: var(--text-dark);
     position: relative;
     
     &:after {
@@ -123,7 +126,7 @@
       left: 0;
       width: 50px;
       height: 3px;
-      background: linear-gradient(90deg, #4776E6, #8E54E9);
+      background: var(--gradient-primary);
     }
   }
 }
@@ -154,24 +157,30 @@
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color: #333;
+    color: var(--text-dark);
   }
   
   input, textarea {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     
     &:focus {
       outline: none;
-      border-color: #8E54E9;
+      border-color: var(--primary-color);
     }
     
     &.invalid {
       border-color: #dc3545;
+    }
+    
+    &::placeholder {
+      color: var(--text-muted);
     }
   }
 }
@@ -183,8 +192,8 @@
 }
 
 .submit-btn {
-  background: linear-gradient(45deg, #4776E6, #8E54E9);
-  color: #fff;
+  background: var(--gradient-primary);
+  color: var(--text-light);
   border: none;
   padding: 12px 25px;
   border-radius: 5px;
@@ -195,6 +204,6 @@
   
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-md);
   }
 }

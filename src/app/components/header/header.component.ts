@@ -1,13 +1,15 @@
-import { Component, OnInit, OnDestroy, HostListener, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ScrollService } from '../../services/scroll.service';
+import { ThemeService } from '../../services/theme.service';
 
 interface NavItem {
   id: string;
   name: string;
   icon: string;
+  description?: string;
 }
 
 @Component({
@@ -16,30 +18,44 @@ interface NavItem {
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  @ViewChild('header') headerElement!: ElementRef;
+  
   isScrolled = false;
   isMobileMenuOpen = false;
   activeSection = 'home';
   isDarkMode = false;
+  scrollProgress = 0;
   private destroy$ = new Subject<void>();
   
   navItems: NavItem[] = [
-    { id: 'home', name: 'Home', icon: 'fas fa-home' },
-    { id: 'about', name: 'About', icon: 'fas fa-user' },
-    { id: 'experience', name: 'Experience', icon: 'fas fa-briefcase' },
-    { id: 'skills', name: 'Skills', icon: 'fas fa-code' },
-    { id: 'projects', name: 'Projects', icon: 'fas fa-project-diagram' },
-    { id: 'contact', name: 'Contact', icon: 'fas fa-envelope' }
+    { id: 'home', name: 'Home', icon: 'fas fa-home', description: 'Welcome to my portfolio' },
+    { id: 'about', name: 'About', icon: 'fas fa-user', description: 'Learn about me' },
+    { id: 'experience', name: 'Experience', icon: 'fas fa-briefcase', description: 'My work history' },
+    { id: 'skills', name: 'Skills', icon: 'fas fa-code', description: 'Technologies I work with' },
+    { id: 'projects', name: 'Projects', icon: 'fas fa-project-diagram', description: 'My recent work' },
+    { id: 'contact', name: 'Contact', icon: 'fas fa-envelope', description: 'Get in touch' }
+  ];
+
+  socialLinks = [
+    { name: 'GitHub', icon: 'fab fa-github', url: 'https://github.com/bhaveshc20' },
+    { name: 'LinkedIn', icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/bhaveshc' },
+    { name: 'Twitter', icon: 'fab fa-twitter', url: 'https://twitter.com/bhaveshc' }
   ];
 
   constructor(
     private router: Router,
     private scrollService: ScrollService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private themeService: ThemeService
   ) { }
 
   ngOnInit(): void {
-    // Check for saved theme preference
-    this.checkThemePreference();
+    // Subscribe to theme changes
+    this.themeService.darkMode$.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(isDark => {
+      this.isDarkMode = isDark;
+    });
     
     // Track route changes to update active link
     this.router.events.pipe(
@@ -62,6 +78,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @HostListener('window:scroll')
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
+    
+    // Calculate scroll progress
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    this.scrollProgress = (window.scrollY / windowHeight) * 100;
   }
 
   toggleMobileMenu() {
@@ -115,35 +135,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   
   toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    
-    if (this.isDarkMode) {
-      this.renderer.addClass(document.body, 'dark-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      this.renderer.removeClass(document.body, 'dark-theme');
-      localStorage.setItem('theme', 'light');
-    }
+    this.themeService.toggleTheme();
   }
   
-  private checkThemePreference() {
-    // Check localStorage
-    const savedTheme = localStorage.getItem('theme');
-    
-    if (savedTheme === 'dark') {
-      this.isDarkMode = true;
-      this.renderer.addClass(document.body, 'dark-theme');
-    } else if (savedTheme === 'light') {
-      this.isDarkMode = false;
-    } else {
-      // Check system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.isDarkMode = prefersDark;
-      
-      if (prefersDark) {
-        this.renderer.addClass(document.body, 'dark-theme');
-      }
-    }
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
   
   private setupScrollSpy() {
