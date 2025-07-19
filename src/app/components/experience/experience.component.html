@@ -3,12 +3,37 @@
     <h2 class="section-title">Work Experience</h2>
     
     <div class="timeline">
-      <div class="timeline-item" *ngFor="let exp of experiences">
+      <div class="timeline-item" *ngFor="let exp of experiences; let i = index" [ngClass]="{'animate-fade-in': true}" [style.animation-delay]="i * 0.2 + 's'">
         <div class="timeline-content">
-          <h3 class="job-title">{{exp.title}}</h3>
-          <h4 class="company">{{exp.company}}</h4>
-          <p class="period">{{exp.period}}</p>
-          <p class="description">{{exp.description}}</p>
+          <div class="experience-header">
+            <div class="experience-title-info">
+              <h3 class="job-title">{{exp.title}}</h3>
+              <h4 class="company">{{exp.company}}</h4>
+            </div>
+            <div class="experience-meta">
+              <span class="employment-type">{{exp.employmentType}}</span>
+              <span class="location">{{exp.location}}</span>
+            </div>
+          </div>
+          
+          <div class="experience-period">
+            <span class="period">{{exp.period}}</span>
+            <span class="duration" *ngIf="getExperienceDuration(exp.period)">· {{getExperienceDuration(exp.period)}}</span>
+          </div>
+          
+          <div class="experience-description">
+            <ul>
+              <li *ngFor="let item of exp.description; let j = index" [ngClass]="{'animate-fade-in': true}" [style.animation-delay]="(i * 0.2 + 0.1 + j * 0.05) + 's'">
+                {{item}}
+              </li>
+            </ul>
+          </div>
+          
+          <div class="experience-skills">
+            <span class="skill-tag" *ngFor="let skill of exp.skills; let k = index" [ngClass]="{'animate-fade-in': true}" [style.animation-delay]="(i * 0.2 + 0.3 + k * 0.05) + 's'">
+              {{skill}}
+            </span>
+          </div>
         </div>
       </div>
     </div>
