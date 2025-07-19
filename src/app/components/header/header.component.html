@@ -1,0 +1,20 @@
+<header [ngClass]="{'scrolled': isScrolled}">
+  <nav>
+    <div class="logo">
+      <span>BC</span>
+    </div>
+    <ul class="nav-links" [ngClass]="{'active': isMobileMenuOpen}">
+      <li><a (click)="scrollToSection('home')" [ngClass]="{'active': activeSection === 'home'}">Home</a></li>
+      <li><a (click)="scrollToSection('about')" [ngClass]="{'active': activeSection === 'about'}">About</a></li>
+      <li><a (click)="scrollToSection('experience')" [ngClass]="{'active': activeSection === 'experience'}">Experience</a></li>
+      <li><a (click)="scrollToSection('skills')" [ngClass]="{'active': activeSection === 'skills'}">Skills</a></li>
+      <li><a (click)="scrollToSection('projects')" [ngClass]="{'active': activeSection === 'projects'}">Projects</a></li>
+      <li><a (click)="scrollToSection('contact')" [ngClass]="{'active': activeSection === 'contact'}">Contact</a></li>
+    </ul>
+    <div class="hamburger" [ngClass]="{'active': isMobileMenuOpen}" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>

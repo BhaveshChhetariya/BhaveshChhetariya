@@ -1,0 +1,31 @@
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1 class="animate-text">Bhavesh Chhetariya</h1>
+    <h2 class="animate-text-delay">Full Stack Developer</h2>
+    <p class="animate-text-delay-2">Building innovative web solutions with modern technologies</p>
+    <div class="hero-buttons">
+      <a (click)="scrollToSection('contact')" class="btn primary-btn">Get In Touch</a>
+      <a (click)="scrollToSection('projects')" class="btn secondary-btn">View My Work</a>
+    </div>
+  </div>
+  <div class="hero-animation">
+    <!-- Rive animation will be loaded here -->
+    <canvas #heroRiveCanvas width="400" height="400"></canvas>
+  </div>
+</section>
+
+<!-- About Section -->
+<app-about id="about"></app-about>
+
+<!-- Experience Section -->
+<app-experience id="experience"></app-experience>
+
+<!-- Skills Section -->
+<app-skills id="skills"></app-skills>
+
+<!-- Projects Section -->
+<app-projects id="projects"></app-projects>
+
+<!-- Contact Section -->
+<app-contact id="contact"></app-contact>
