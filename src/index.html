@@ -1,77 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Bhavesh Chhetariya - Full Stack Developer Portfolio</title>
+  <title>Bhavesh - Developer Portfolio</title>
   <base href="/">
-  
-  <!-- Primary Meta Tags -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bhavesh Chhetariya is a Full Stack Developer specializing in Angular, React, Node.js, and cloud technologies. View projects, skills, and experience.">
-  <meta name="keywords" content="Bhavesh Chhetariya, Full Stack Developer, Web Developer, Angular, React, Node.js, Portfolio, Software Engineer">
-  <meta name="author" content="Bhavesh Chhetariya">
-  <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bhaveshchhetariya.com/">
-  <meta property="og:title" content="Bhavesh Chhetariya - Full Stack Developer Portfolio">
-  <meta property="og:description" content="Full Stack Developer specializing in Angular, React, Node.js, and cloud technologies. View my projects and skills.">
-  <meta property="og:image" content="https://bhaveshchhetariya.com/assets/images/portfolio-preview.jpg">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://bhaveshchhetariya.com/">
-  <meta property="twitter:title" content="Bhavesh Chhetariya - Full Stack Developer Portfolio">
-  <meta property="twitter:description" content="Full Stack Developer specializing in Angular, React, Node.js, and cloud technologies. View my projects and skills.">
-  <meta property="twitter:image" content="https://bhaveshchhetariya.com/assets/images/portfolio-preview.jpg">
-  
-  <!-- Favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#1e1e1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-  <link rel="manifest" href="assets/site.webmanifest">
-  
-  <!-- Preload critical assets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  
-  <!-- Font Awesome with defer to improve page load -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Bhavesh Chhetariya",
-      "url": "https://bhaveshchhetariya.com",
-      "image": "https://bhaveshchhetariya.com/assets/images/profile.jpg",
-      "sameAs": [
-        "https://github.com/bhaveshc20",
-        "https://linkedin.com/in/bhaveshc",
-        "https://twitter.com/bhaveshc"
-      ],
-      "jobTitle": "Full Stack Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Tech Company"
-      },
-      "description": "Full Stack Developer specializing in Angular, React, Node.js, and cloud technologies."
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Prevent flash of unstyled content */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+      overflow-x: hidden;
     }
-  </script>
-  
-  <!-- Theme color for browser -->
-  <meta name="theme-color" content="#6c63ff">
+    
+    /* Loading spinner */
+    .loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #2d2d30;
+      border-top: 3px solid #4fc3f7;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Hide loading when app is ready */
+    app-root:not(:empty) + .loading-container {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <app-root></app-root>
-  <noscript>Please enable JavaScript to view this website.</noscript>
+  <div class="loading-container">
+    <div class="loading-spinner"></div>
+  </div>
 </body>
 </html>

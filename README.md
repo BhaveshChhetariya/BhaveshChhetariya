@@ -1,139 +1,216 @@
-# Bhavesh Chhetariya - Angular Portfolio
+# Angular VS Code Portfolio
 
-A modern, responsive portfolio website built with Angular, featuring smooth scrolling with Lenis and interactive animations with Rive.
+A beautiful, interactive developer portfolio built with Angular 17, designed to look like Visual Studio Code.
 
-## Prerequisites
+## 🚀 Features
 
-Before you begin, ensure you have the following installed:
-- Node.js (v14.x or later)
-- npm (v6.x or later)
-- Angular CLI (`npm install -g @angular/cli`)
+- **VS Code Interface**: Authentic VS Code dark theme with file explorer, tabs, and status bar
+- **Interactive Snake Game**: Complete the game to unlock GitHub link
+- **Routing**: Separate pages for personal info, professional info, and contact
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Modern Angular**: Built with Angular 17 standalone components
 
-## Getting Started
+## 📁 Project Structure
 
-1. Clone or download this repository
-2. Navigate to the project directory:
+```
+src/
+├── app/
+│   ├── components/
+│   │   └── vscode-layout/          # Main VS Code layout
+│   ├── pages/
+│   │   ├── hello/                  # Home page with Snake game
+│   │   ├── about/                  # About page
+│   │   ├── personal-info/          # Personal information
+│   │   ├── professional-info/      # Professional experience
+│   │   ├── projects/               # Projects showcase
+│   │   ├── sessions/               # Tech sessions
+│   │   ├── articles/               # Blog articles
+│   │   └── contact/                # Contact form
+│   ├── app.component.ts
+│   ├── app.routes.ts
+│   └── ...
+├── styles.scss                     # Global styles
+└── index.html
+```
+
+## 🛠️ Setup Instructions
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Navigate to project directory:**
+   ```bash
+   cd "C:\Users\Admin\angular-portfolio"
    ```
-   cd portfolio-angular
-   ```
-3. Install dependencies:
-   ```
+
+2. **Install dependencies:**
+   ```bash
    npm install
    ```
-4. Start the development server:
+
+3. **Install Angular CLI globally (if not already installed):**
+   ```bash
+   npm install -g @angular/cli
    ```
+
+4. **Start development server:**
+   ```bash
    ng serve
    ```
-5. Open your browser and navigate to `http://localhost:4200/`
+   or
+   ```bash
+   npm start
+   ```
 
-## Project Structure
+5. **Open your browser:**
+   Navigate to `http://localhost:4200`
 
-```
-portfolio-angular/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── about/
-│   │   │   ├── contact/
-│   │   │   ├── experience/
-│   │   │   ├── footer/
-│   │   │   ├── header/
-│   │   │   ├── home/
-│   │   │   ├── projects/
-│   │   │   └── skills/
-│   │   ├── services/
-│   │   │   └── scroll.service.ts
-│   │   ├── shared/
-│   │   │   └── cursor/
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   ├── app.component.scss
-│   │   └── app.module.ts
-│   ├── assets/
-│   ├── environments/
-│   ├── index.html
-│   ├── main.ts
-│   └── styles.scss
-├── angular.json
-├── package.json
-├── tsconfig.json
-└── README.md
+## 🎨 Customization
+
+### 1. Personal Information
+Update your details in:
+- `src/app/components/vscode-layout/vscode-layout.component.html` (sidebar info)
+- `src/app/pages/hello/hello.component.html` (profile section)
+- `src/app/pages/personal-info/personal-info.component.ts` (personal data)
+
+### 2. Professional Information
+Update your experience in:
+- `src/app/pages/professional-info/professional-info.component.ts`
+
+### 3. Projects
+Add your projects in:
+- `src/app/pages/projects/projects.component.ts`
+
+### 4. Contact Information
+Update contact details in:
+- `src/app/pages/contact/contact.component.ts`
+
+## 🚀 Build for Production
+
+```bash
+ng build --configuration production
 ```
 
-## Features
+The build artifacts will be stored in the `dist/` directory.
 
-- **Angular Framework**: Built with Angular for a robust, scalable application
-- **Component-Based Architecture**: Modular design for easy maintenance
-- **Smooth Scrolling**: Implemented using Lenis for a premium scrolling experience
-- **Interactive Animations**: Rive animations for engaging user experience
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Modern UI**: Clean and professional design with subtle animations
-- **Project Filtering**: Filter projects by category
-- **Contact Form**: Ready-to-use contact form with Angular Reactive Forms
-- **Custom Cursor**: Enhanced cursor experience on desktop
-- **Animated Skill Bars**: Visual representation of skills with animated progress bars
+## 📱 Responsive Breakpoints
 
-## Customization
+- Desktop: 1200px+
+- Tablet: 768px - 1199px
+- Mobile: < 768px
 
-### Personal Information
+## 🎯 Available Routes
 
-Edit the component HTML files to update:
-- Your name and title in `home.component.html`
-- About me section in `about.component.html`
-- Contact information in `contact.component.html`
-- Work experience in `experience.component.html`
-- Skills and projects in their respective component files
+- `/hello` - Home page with Snake game
+- `/about` - About page
+- `/personal-info` - Personal information
+- `/professional-info` - Professional experience
+- `/projects` - Projects showcase
+- `/sessions` - Tech sessions
+- `/articles` - Blog articles
+- `/contact` - Contact form
 
-### Rive Animations
+## 🔧 Development Commands
 
-The website uses placeholder Rive animations. To use your own:
+```bash
+# Start development server
+ng serve
 
-1. Create animations on [Rive](https://rive.app/)
-2. Export your animations
-3. Replace the Rive file URLs in the component files:
+# Build for production
+ng build
 
-```typescript
-// In home.component.ts
-this.heroRive = new rive.Rive({
-  src: 'path/to/your/animation.riv', // Replace with your Rive file
-  // other options...
-});
+# Run tests
+ng test
+
+# Generate component
+ng generate component component-name
+
+# Generate service
+ng generate service service-name
 ```
 
-### Images
+## 🌟 Key Features Explained
 
-Replace the placeholder images with your own in the assets folder and update the references in the component files.
+### VS Code Layout
+- Authentic file explorer with expandable sections
+- Tab system with close functionality
+- Status bar with project information
+- Window controls (red, yellow, green dots)
 
-### Colors
+### Snake Game
+- Fully functional Snake game in the hello page
+- Keyboard arrow controls
+- Win condition unlocks GitHub link
+- Skip option available
 
-To change the color scheme, edit the CSS variables in `styles.scss`:
+### Routing
+- Lazy-loaded components for better performance
+- Smooth navigation between sections
+- Active state management in sidebar
+
+## 🎨 Theming
+
+The project uses CSS custom properties for theming:
 
 ```scss
 :root {
-  --primary-color: #6c63ff;
-  --secondary-color: #4d44f9;
-  --accent-color: #ff6584;
-  /* other colors... */
+  --vscode-bg: #1e1e1e;
+  --vscode-sidebar-bg: #252526;
+  --vscode-accent: #4fc3f7;
+  --vscode-text: #d4d4d4;
+  // ... more variables
 }
 ```
 
-## Building for Production
+## 📦 Dependencies
 
-Run `ng build` to build the project for production. The build artifacts will be stored in the `dist/` directory.
+- Angular 17
+- Angular Router
+- Angular Forms
+- Font Awesome (icons)
+- Fira Code (font)
 
-## Deployment
+## 🚀 Deployment
 
-You can deploy this Angular application to various platforms:
+### GitHub Pages
+1. Install Angular GitHub Pages deployer:
+   ```bash
+   ng add angular-cli-ghpages
+   ```
 
-- **GitHub Pages**: Use `angular-cli-ghpages` package
-- **Netlify**: Connect your GitHub repository or upload the dist folder
-- **Vercel**: Similar to Netlify, with automatic deployments
-- **AWS S3**: Upload the dist folder to an S3 bucket configured for static website hosting
+2. Deploy:
+   ```bash
+   ng deploy --base-href=/your-repo-name/
+   ```
 
-## License
+### Netlify
+1. Build the project:
+   ```bash
+   ng build --configuration production
+   ```
 
-Feel free to use this template for your personal portfolio.
+2. Deploy the `dist/vscode-portfolio` folder to Netlify
+
+### Vercel
+1. Connect your GitHub repository to Vercel
+2. Set build command: `ng build --configuration production`
+3. Set output directory: `dist/vscode-portfolio`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## 📄 License
+
+This project is open source and available under the MIT License.
 
 ---
 
-Created by Bhavesh Chhetariya
+**Built with ❤️ using Angular 17**

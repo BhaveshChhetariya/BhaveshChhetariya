@@ -1,0 +1,191 @@
+<div class="professional-info-container fade-in">
+
+
+  <div class="info-content">
+    <!-- Experience Section -->
+    <div class="content-section" *ngIf="activeSection === 'experience'">
+      <div class="file-header">
+        <span class="file-name">professional-info.js</span>
+        <div class="file-actions">
+          <i class="fas fa-copy"></i>
+          <i class="fas fa-download"></i>
+        </div>
+      </div>
+      
+      <div class="code-editor">
+        <div class="line-numbers">
+          <span *ngFor="let line of getLineNumbers(professionalInfo.experience[0].description)">{{ line }}</span>
+        </div>
+        <div class="code-content">
+          <div class="code-line comment">/**</div>
+          <div class="code-line comment"> * Professional Experience</div>
+          <div class="code-line comment"> */</div>
+          <div class="code-line" *ngFor="let line of professionalInfo.experience[0].description">
+            <span class="comment"> * {{ line }}</span>
+          </div>
+          <div class="code-line comment"> */</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="content-section" *ngIf="activeSection === 'skills'">
+      <div class="file-header">
+        <span class="file-name">hard-skills.json</span>
+        <div class="file-actions">
+          <i class="fas fa-copy"></i>
+          <i class="fas fa-download"></i>
+        </div>
+      </div>
+      
+      <div class="skills-content">
+        <div class="skill-categories">
+          <div 
+            *ngFor="let category of skillCategories"
+            class="category-tab"
+            [class.active]="activeSkillCategory === category.key"
+            (click)="setActiveSkillCategory(category.key)">
+            <i [class]="category.icon"></i>
+            <span>{{ category.name }}</span>
+          </div>
+        </div>
+        
+        <div class="skills-grid">
+          <div 
+            *ngFor="let skill of getSkillsByCategory(activeSkillCategory)"
+            class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div 
+                class="skill-progress" 
+                [style.width.%]="skill.level"
+                [style.background-color]="getSkillColor(skill.level)">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="content-section" *ngIf="activeSection === 'certifications'">
+      <div class="file-header">
+        <span class="file-name">certifications.yml</span>
+        <div class="file-actions">
+          <i class="fas fa-copy"></i>
+          <i class="fas fa-download"></i>
+        </div>
+      </div>
+      
+      <div class="certifications-content">
+        <div class="certification-item" *ngFor="let cert of professionalInfo.certifications">
+          <div class="cert-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="cert-details">
+            <h3>{{ cert.name }}</h3>
+            <div class="cert-issuer">
+              <i class="fas fa-building"></i>
+              <span>{{ cert.issuer }}</span>
+            </div>
+            <div class="cert-date">
+              <i class="fas fa-calendar"></i>
+              <span>{{ cert.date }}</span>
+            </div>
+            <div class="cert-id" *ngIf="cert.credentialId">
+              <i class="fas fa-id-card"></i>
+              <span>{{ cert.credentialId }}</span>
+            </div>
+          </div>
+          <div class="cert-badge">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements Section -->
+    <div class="content-section" *ngIf="activeSection === 'achievements'">
+      <div class="file-header">
+        <span class="file-name">achievements.md</span>
+        <div class="file-actions">
+          <i class="fas fa-copy"></i>
+          <i class="fas fa-download"></i>
+        </div>
+      </div>
+      
+      <div class="achievements-content">
+        <div class="achievement-item" *ngFor="let achievement of professionalInfo.achievements">
+          <div class="achievement-text">{{ achievement }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-preview">
+    <div class="preview-header">
+      <i class="fas fa-chart-line"></i>
+      <span>Career Stats</span>
+    </div>
+    
+    <div class="preview-content">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">{{ professionalInfo.experience.length }}+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">{{ professionalInfo.skills.length }}</div>
+          <div class="stat-label">Technical Skills</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">{{ professionalInfo.certifications.length }}</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">{{ professionalInfo.achievements.length }}</div>
+          <div class="stat-label">Achievements</div>
+        </div>
+      </div>
+      
+      <div class="skill-summary">
+        <h4>Top Skills</h4>
+        <div class="top-skills">
+          <div 
+            *ngFor="let skill of professionalInfo.skills.slice(0, 5)"
+            class="top-skill">
+            <span class="skill-name">{{ skill.name }}</span>
+            <div class="skill-mini-bar">
+              <div 
+                class="skill-mini-progress" 
+                [style.width.%]="skill.level">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="experience-timeline">
+        <h4>Experience Timeline</h4>
+        <div class="timeline">
+          <div 
+            *ngFor="let exp of professionalInfo.experience"
+            class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">{{ exp.position }}</div>
+              <div class="timeline-company">{{ exp.company }}</div>
+              <div class="timeline-duration">{{ exp.duration }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

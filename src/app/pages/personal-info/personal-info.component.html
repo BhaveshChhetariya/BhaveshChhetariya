@@ -1,0 +1,83 @@
+<div class="personal-info-container fade-in">
+
+
+  <div class="info-content">
+    <!-- Bio Section -->
+    <div class="content-section" *ngIf="activeSection === 'bio'">
+      <div class="file-header">
+        <span class="file-name">bio.txt</span>
+      </div>
+      
+      <div class="simple-content">
+        <h3>About Me</h3>
+        <div *ngFor="let line of personalInfo.bio">
+          <p>{{ line }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interests Section -->
+    <div class="content-section" *ngIf="activeSection === 'interests'">
+      <div class="file-header">
+        <span class="file-name">interests.json</span>
+      </div>
+      
+      <div class="simple-content">
+        <h3>My Interests</h3>
+        <ul>
+          <li *ngFor="let interest of personalInfo.interests">{{ interest }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="content-section" *ngIf="activeSection === 'education'">
+      <div class="file-header">
+        <span class="file-name">education.md</span>
+      </div>
+      
+      <div class="education-content">
+        <div class="education-item" *ngFor="let edu of personalInfo.education">
+          <div class="education-header">
+            <h3>{{ edu.degree }}</h3>
+            <span class="year">{{ edu.year }}</span>
+          </div>
+          <div class="institution">
+            <i class="fas fa-university"></i>
+            <span>{{ edu.institution }}</span>
+          </div>
+          <p class="description">{{ edu.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-preview">
+    <div class="preview-header">
+      <i class="fas fa-eye"></i>
+      <span>Preview</span>
+    </div>
+    
+    <div class="preview-content">
+      <div class="profile-card">
+        <div class="profile-avatar">
+          <img src="https://via.placeholder.com/80x80/4A90E2/FFFFFF?text=You" alt="Profile">
+        </div>
+        <div class="profile-details">
+          <h3>Your Name</h3>
+          <p class="title">Full Stack Developer</p>
+          <div class="stats">
+            <div class="stat">
+              <span class="number">{{ personalInfo.interests.length }}</span>
+              <span class="label">Interests</span>
+            </div>
+            <div class="stat">
+              <span class="number">{{ personalInfo.education.length }}</span>
+              <span class="label">Degrees</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

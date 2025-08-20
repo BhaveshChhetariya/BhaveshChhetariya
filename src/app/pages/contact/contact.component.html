@@ -1,0 +1,211 @@
+<div class="contact-container fade-in">
+  <div class="contact-form-section">
+    <div class="form-header">
+      <h2>// Get in touch</h2>
+      <p>I'm always interested in new opportunities and collaborations. Let's build something amazing together!</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">_name:</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name"
+            [(ngModel)]="contactForm.name"
+            required
+            placeholder="Enter your name"
+            #nameInput="ngModel">
+          <div class="error-message" *ngIf="nameInput.invalid && nameInput.touched">
+            Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">_email:</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email"
+            [(ngModel)]="contactForm.email"
+            required
+            email
+            placeholder="Enter your email"
+            #emailInput="ngModel">
+          <div class="error-message" *ngIf="emailInput.invalid && emailInput.touched">
+            <span *ngIf="emailInput.errors?.['required']">Email is required</span>
+            <span *ngIf="emailInput.errors?.['email']">Please enter a valid email</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">_subject:</label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject"
+          [(ngModel)]="contactForm.subject"
+          required
+          placeholder="What's this about?"
+          #subjectInput="ngModel">
+        <div class="error-message" *ngIf="subjectInput.invalid && subjectInput.touched">
+          Subject is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">_message:</label>
+        <textarea 
+          id="message" 
+          name="message"
+          [(ngModel)]="contactForm.message"
+          required
+          rows="6"
+          placeholder="Tell me about your project or idea..."
+          #messageInput="ngModel"></textarea>
+        <div class="error-message" *ngIf="messageInput.invalid && messageInput.touched">
+          Message is required
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button 
+          type="submit" 
+          class="btn-primary"
+          [disabled]="!contactFormRef.form.valid || isSubmitting">
+          <span *ngIf="!isSubmitting">submit-message</span>
+          <span *ngIf="isSubmitting">
+            <i class="loading-spinner"></i>
+            sending...
+          </span>
+        </button>
+
+        <div class="form-status">
+          <div class="success-message" *ngIf="submitSuccess">
+            <i class="fas fa-check-circle"></i>
+            Message sent successfully! I'll get back to you soon.
+          </div>
+          <div class="error-message" *ngIf="submitError">
+            <i class="fas fa-exclamation-circle"></i>
+            Something went wrong. Please try again.
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="contact-info-section">
+    <div class="info-card">
+      <div class="card-header">
+        <i class="fas fa-address-card"></i>
+        <span>Contact Information</span>
+      </div>
+      
+      <div class="contact-details">
+        <div class="contact-item" (click)="copyToClipboard(contactInfo.email)">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-text">
+            <span class="label">Email</span>
+            <span class="value">{{ contactInfo.email }}</span>
+          </div>
+          <div class="contact-action">
+            <i class="fas fa-copy"></i>
+          </div>
+        </div>
+
+        <div class="contact-item" (click)="copyToClipboard(contactInfo.phone)">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="contact-text">
+            <span class="label">Phone</span>
+            <span class="value">{{ contactInfo.phone }}</span>
+          </div>
+          <div class="contact-action">
+            <i class="fas fa-copy"></i>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-text">
+            <span class="label">Location</span>
+            <span class="value">{{ contactInfo.location }}</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="contact-text">
+            <span class="label">Timezone</span>
+            <span class="value">{{ contactInfo.timezone }}</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="contact-text">
+            <span class="label">Status</span>
+            <span class="value available">{{ contactInfo.availability }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-card">
+      <div class="card-header">
+        <i class="fas fa-share-alt"></i>
+        <span>Connect with me</span>
+      </div>
+      
+      <div class="social-links">
+        <div 
+          *ngFor="let social of socialLinks"
+          class="social-item"
+          (click)="openSocialLink(social.url)">
+          <div class="social-icon">
+            <i [class]="social.icon"></i>
+          </div>
+          <span class="social-name">{{ social.name }}</span>
+          <div class="social-arrow">
+            <i class="fas fa-external-link-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="availability-card">
+      <div class="card-header">
+        <i class="fas fa-calendar-check"></i>
+        <span>Availability</span>
+      </div>
+      
+      <div class="availability-content">
+        <div class="availability-status">
+          <div class="status-indicator available"></div>
+          <span>Available for new projects</span>
+        </div>
+        
+        <div class="response-time">
+          <i class="fas fa-clock"></i>
+          <span>Usually responds within 24 hours</span>
+        </div>
+        
+        <div class="preferred-contact">
+          <i class="fas fa-star"></i>
+          <span>Email preferred for initial contact</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
