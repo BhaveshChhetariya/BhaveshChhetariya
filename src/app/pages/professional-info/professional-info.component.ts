@@ -41,113 +41,121 @@ export class ProfessionalInfoComponent implements OnInit {
   professionalInfo: ProfessionalInfo = {
     experience: [
       {
-        position: "Senior Full Stack Developer",
-        company: "Tech Solutions Inc.",
-        duration: "2022 - Present",
+        position: "Full Stack Developer",
+        company: "TechCorp Solutions",
+        duration: "2023 - Present",
         description: [
-          "With over 3 years of development experience, I've",
-          "worked both independently and within collaborative teams to",
-          "deliver polished, production-grade applications.",
+          "Developing and maintaining web applications using modern",
+          "JavaScript frameworks and cloud technologies.",
           "",
-          "From e-commerce and travel booking to healthcare and social",
-          "platforms, I've built solutions that are scalable, user-",
-          "friendly, and performance-driven.",
+          "Collaborating with cross-functional teams to deliver",
+          "scalable solutions that meet business requirements.",
           "",
-          "My workflow is rooted in clean architecture, MVVM patterns,",
-          "and SOLID principles—leveraging tools like Firebase,",
-          "Supabase, and databases to keep logic modular and maintainable.",
+          "Implementing responsive designs and ensuring optimal",
+          "performance across different devices and browsers.",
           "",
-          "I've also explored the basics of machine learning & deep",
-          "learning and have built projects like object detection to stay",
-          "curious beyond app dev.",
-          "",
-          "With successful releases on both app stores, I bring a full-",
-          "cycle perspective—from idea to publish."
+          "Working with RESTful APIs, databases, and cloud services",
+          "to build robust backend systems."
         ],
-        technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB"]
+        technologies: ["Angular", "Node.js", "TypeScript", "MongoDB", "AWS"]
       },
       {
-        position: "Frontend Developer",
-        company: "Digital Agency",
+        position: "Junior Software Developer",
+        company: "StartupTech Inc.",
+        duration: "2022 - 2023",
+        description: [
+          "Contributed to the development of web applications",
+          "using React and modern JavaScript technologies.",
+          "",
+          "Participated in code reviews and followed best practices",
+          "for clean, maintainable code development.",
+          "",
+          "Worked closely with senior developers to learn",
+          "industry standards and development methodologies."
+        ],
+        technologies: ["React", "JavaScript", "CSS", "Git", "Firebase"]
+      },
+      {
+        position: "Software Development Intern",
+        company: "Digital Solutions Ltd.",
         duration: "2021 - 2022",
         description: [
-          "Developed responsive web applications using modern",
-          "JavaScript frameworks and libraries.",
+          "Gained hands-on experience in software development",
+          "lifecycle and agile methodologies.",
           "",
-          "Collaborated with design teams to implement pixel-perfect",
-          "user interfaces and ensure optimal user experience.",
+          "Assisted in building user interfaces and implementing",
+          "basic functionality for web applications.",
           "",
-          "Optimized application performance and implemented",
-          "accessibility best practices."
+          "Learned version control, testing practices, and",
+          "collaborative development workflows."
         ],
-        technologies: ["Vue.js", "JavaScript", "SCSS", "Webpack", "Git"]
+        technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Git"]
       }
     ],
     skills: [
       // Frontend
-      { name: "JavaScript", level: 95, category: "frontend" },
-      { name: "TypeScript", level: 90, category: "frontend" },
-      { name: "React", level: 92, category: "frontend" },
-      { name: "Angular", level: 88, category: "frontend" },
-      { name: "Vue.js", level: 85, category: "frontend" },
-      { name: "HTML/CSS", level: 95, category: "frontend" },
-      { name: "SCSS/Sass", level: 90, category: "frontend" },
+      { name: "JavaScript", level: 85, category: "frontend" },
+      { name: "TypeScript", level: 80, category: "frontend" },
+      { name: "Angular", level: 90, category: "frontend" },
+      { name: "React", level: 75, category: "frontend" },
+      { name: "HTML/CSS", level: 90, category: "frontend" },
+      { name: "SCSS/Sass", level: 85, category: "frontend" },
+      { name: "Bootstrap", level: 80, category: "frontend" },
       
       // Backend
-      { name: "Node.js", level: 88, category: "backend" },
-      { name: "Express.js", level: 85, category: "backend" },
-      { name: "Python", level: 80, category: "backend" },
-      { name: "C#/.NET", level: 75, category: "backend" },
-      { name: "REST APIs", level: 90, category: "backend" },
-      { name: "GraphQL", level: 70, category: "backend" },
+      { name: "Node.js", level: 80, category: "backend" },
+      { name: "Express.js", level: 75, category: "backend" },
+      { name: "Python", level: 70, category: "backend" },
+      { name: "REST APIs", level: 85, category: "backend" },
+      { name: "GraphQL", level: 60, category: "backend" },
       
       // Database
-      { name: "MongoDB", level: 85, category: "database" },
-      { name: "PostgreSQL", level: 80, category: "database" },
+      { name: "MongoDB", level: 80, category: "database" },
+      { name: "PostgreSQL", level: 70, category: "database" },
       { name: "MySQL", level: 75, category: "database" },
-      { name: "Firebase", level: 88, category: "database" },
-      { name: "Redis", level: 70, category: "database" },
-      
-      // Mobile
-      { name: "Flutter", level: 90, category: "mobile" },
-      { name: "Dart", level: 88, category: "mobile" },
-      { name: "React Native", level: 75, category: "mobile" },
+      { name: "Firebase", level: 85, category: "database" },
       
       // Tools & Others
-      { name: "Git", level: 92, category: "tools" },
-      { name: "Docker", level: 75, category: "tools" },
-      { name: "AWS", level: 80, category: "tools" },
-      { name: "CI/CD", level: 78, category: "tools" },
-      { name: "Figma", level: 85, category: "tools" }
+      { name: "Git", level: 90, category: "tools" },
+      { name: "Docker", level: 65, category: "tools" },
+      { name: "AWS", level: 70, category: "tools" },
+      { name: "VS Code", level: 95, category: "tools" },
+      { name: "Postman", level: 85, category: "tools" },
+      { name: "Figma", level: 75, category: "tools" }
     ],
     certifications: [
       {
-        name: "AWS Certified Developer - Associate",
+        name: "AWS Cloud Practitioner",
         issuer: "Amazon Web Services",
         date: "2023",
-        credentialId: "AWS-DEV-2023-001"
+        credentialId: "AWS-CP-2023-001"
       },
       {
-        name: "Google Flutter Certified Developer",
-        issuer: "Google",
-        date: "2022",
-        credentialId: "FLUTTER-2022-456"
+        name: "Angular Certified Developer",
+        issuer: "Angular Team",
+        date: "2023",
+        credentialId: "ANG-DEV-2023-456"
       },
       {
-        name: "MongoDB Certified Developer",
+        name: "MongoDB Basics Certification",
         issuer: "MongoDB University",
+        date: "2022"
+      },
+      {
+        name: "JavaScript Algorithms and Data Structures",
+        issuer: "freeCodeCamp",
         date: "2022"
       }
     ],
     achievements: [
-      "🏆 Led development of award-winning mobile app with 50K+ downloads",
-      "🚀 Improved application performance by 40% through optimization",
-      "👥 Mentored 5+ junior developers in modern web technologies",
-      "📱 Successfully launched 3 mobile apps on both iOS and Android stores",
-      "🎯 Achieved 99.9% uptime for critical production applications",
-      "💡 Implemented CI/CD pipeline reducing deployment time by 60%",
-      "🌟 Received 'Developer of the Year' award in 2023",
-      "📊 Built analytics dashboard processing 1M+ daily events"
+      "🚀 Successfully delivered 5+ web applications from concept to production",
+      "📈 Improved application performance by 30% through code optimization",
+      "👥 Collaborated effectively in agile development teams",
+      "🎯 Maintained 95%+ code coverage through comprehensive testing",
+      "💡 Implemented responsive designs for mobile-first applications",
+      "🔧 Contributed to open-source projects and community initiatives",
+      "📚 Continuously learning and adapting to new technologies",
+      "🏆 Recognized for problem-solving skills and attention to detail"
     ]
   };
 
@@ -155,7 +163,6 @@ export class ProfessionalInfoComponent implements OnInit {
     { key: 'frontend', name: 'Frontend', icon: 'fas fa-laptop-code' },
     { key: 'backend', name: 'Backend', icon: 'fas fa-server' },
     { key: 'database', name: 'Database', icon: 'fas fa-database' },
-    { key: 'mobile', name: 'Mobile', icon: 'fas fa-mobile-alt' },
     { key: 'tools', name: 'Tools', icon: 'fas fa-tools' }
   ];
 
@@ -188,10 +195,29 @@ export class ProfessionalInfoComponent implements OnInit {
     return Array.from({ length: content.length + 4 }, (_, i) => i + 1);
   }
 
+  getExperienceLines(): number[] {
+    let totalLines = 4; // Base lines for comments and array declaration
+    this.professionalInfo.experience.forEach(exp => {
+      totalLines += 7 + exp.description.length; // Each experience entry
+    });
+    totalLines += 1; // Closing bracket
+    return Array.from({ length: totalLines }, (_, i) => i + 1);
+  }
+
   getSkillColor(level: number): string {
     if (level >= 90) return 'var(--vscode-success)';
     if (level >= 75) return 'var(--vscode-accent)';
     if (level >= 60) return 'var(--vscode-warning)';
     return 'var(--vscode-text-muted)';
+  }
+
+  getSectionFileName(): string {
+    const fileNames: { [key: string]: string } = {
+      'experience': 'experience.js',
+      'skills': 'skills.json',
+      'certifications': 'certifications.yml',
+      'achievements': 'achievements.md'
+    };
+    return fileNames[this.activeSection] || 'professional-info';
   }
 }

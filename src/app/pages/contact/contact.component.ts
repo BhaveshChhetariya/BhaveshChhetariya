@@ -29,18 +29,18 @@ export class ContactComponent {
   submitError = false;
 
   contactInfo = {
-    email: 'your.email@example.com',
-    phone: '+1 (555) 123-4567',
-    location: 'Your City, Country',
-    timezone: 'UTC+0',
-    availability: 'Available for freelance work'
+    email: 'developer@example.com',
+    phone: '+91 98765 43210',
+    location: 'Mumbai, India',
+    timezone: 'UTC+5:30 (IST)',
+    availability: 'Available for new opportunities'
   };
 
   socialLinks = [
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/your-profile', icon: 'fab fa-linkedin' },
-    { name: 'GitHub', url: 'https://github.com/your-username', icon: 'fab fa-github' },
-    { name: 'Twitter', url: 'https://twitter.com/your-handle', icon: 'fab fa-twitter' },
-    { name: 'Instagram', url: 'https://instagram.com/your-handle', icon: 'fab fa-instagram' }
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/developer-profile', icon: 'fab fa-linkedin' },
+    { name: 'GitHub', url: 'https://github.com/developer-username', icon: 'fab fa-github' },
+    { name: 'Twitter', url: 'https://twitter.com/dev_handle', icon: 'fab fa-twitter' },
+    { name: 'Portfolio', url: 'https://developer-portfolio.com', icon: 'fas fa-globe' }
   ];
 
   onSubmit() {

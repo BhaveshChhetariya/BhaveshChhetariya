@@ -45,38 +45,24 @@ export class HelloComponent implements OnInit, AfterViewInit, OnDestroy {
       clearTimeout(this.game.gameLoop);
     }
     window.removeEventListener('resize', this.handleResize.bind(this));
+    document.removeEventListener('keydown', this.handleKeyPress);
   }
 
   private handleResize() {
-    if (!this.canvasRef?.nativeElement) return;
-    
-    const canvas = this.canvasRef.nativeElement;
-    const container = canvas.parentElement;
-    
-    if (container) {
-      const containerWidth = container.clientWidth;
-      const isMobile = window.innerWidth <= 768;
-      
-      if (isMobile) {
-        // Mobile responsive canvas sizing
-        const maxWidth = Math.min(containerWidth - 20, 280);
-        const aspectRatio = 200 / 300; // height / width
+    if (this.canvasRef?.nativeElement && this.ctx) {
+      const canvas = this.canvasRef.nativeElement;
+      const container = canvas.parentElement;
+      if (container) {
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
         
-        canvas.style.width = maxWidth + 'px';
-        canvas.style.height = (maxWidth * aspectRatio) + 'px';
-        
-        // Update canvas internal dimensions
+        // Maintain aspect ratio
+        const size = Math.min(containerWidth - 40, containerHeight - 40, 300);
         canvas.width = 300;
         canvas.height = 200;
-      } else {
-        // Desktop sizing
-        canvas.style.width = '300px';
-        canvas.style.height = '200px';
-        canvas.width = 300;
-        canvas.height = 200;
+        this.tileCount = canvas.width / this.gridSize;
       }
       
-      // Redraw game after resize
       if (this.ctx) {
         this.drawGame();
       }
@@ -122,18 +108,21 @@ export class HelloComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!this.canvasRef?.nativeElement) return;
 
     const canvas = this.canvasRef.nativeElement;
-    this.game.food = {
-      x: Math.floor(Math.random() * this.tileCount) * this.gridSize,
-      y: Math.floor(Math.random() * (canvas.height / this.gridSize)) * this.gridSize
-    };
+    let newFood: { x: number; y: number };
+    let attempts = 0;
     
-    // Make sure food doesn't spawn on snake
-    for (let segment of this.game.snake) {
-      if (segment.x === this.game.food.x && segment.y === this.game.food.y) {
-        this.generateFood();
-        return;
-      }
-    }
+    do {
+      newFood = {
+        x: Math.floor(Math.random() * (canvas.width / this.gridSize)) * this.gridSize,
+        y: Math.floor(Math.random() * (canvas.height / this.gridSize)) * this.gridSize
+      };
+      attempts++;
+    } while (
+      this.game.snake.some(segment => segment.x === newFood.x && segment.y === newFood.y) && 
+      attempts < 100
+    );
+    
+    this.game.food = newFood;
   }
 
   private drawGame() {
@@ -142,59 +131,56 @@ export class HelloComponent implements OnInit, AfterViewInit, OnDestroy {
     const canvas = this.canvasRef.nativeElement;
     
     // Clear canvas
-    this.ctx.fillStyle = '#0d47a1';
+    this.ctx.fillStyle = '#011627';
     this.ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     // Draw snake
     this.ctx.fillStyle = '#4caf50';
-    for (let segment of this.game.snake) {
+    this.game.snake.forEach(segment => {
       this.ctx.fillRect(segment.x, segment.y, this.gridSize - 2, this.gridSize - 2);
-    }
+    });
     
     // Draw food
-    this.ctx.fillStyle = '#ff5722';
+    this.ctx.fillStyle = '#ff6b6b';
     this.ctx.fillRect(this.game.food.x, this.game.food.y, this.gridSize - 2, this.gridSize - 2);
-    
-    // Update food counter
-    this.foodLeft = Math.max(0, 5 - this.game.score);
   }
 
   private gameLoop = () => {
-    if (!this.game.gameRunning || !this.canvasRef?.nativeElement) return;
-    
+    if (!this.game.gameRunning) return;
+
     // Move snake
-    const head = {
-      x: this.game.snake[0].x + this.game.direction.x,
-      y: this.game.snake[0].y + this.game.direction.y
-    };
-    
+    const head = { ...this.game.snake[0] };
+    head.x += this.game.direction.x;
+    head.y += this.game.direction.y;
+
     // Check wall collision
+    if (!this.canvasRef?.nativeElement) return;
     const canvas = this.canvasRef.nativeElement;
+    
     if (head.x < 0 || head.x >= canvas.width || head.y < 0 || head.y >= canvas.height) {
       this.gameOver();
       return;
     }
-    
+
     // Check self collision
-    for (let segment of this.game.snake) {
-      if (head.x === segment.x && head.y === segment.y) {
-        this.gameOver();
-        return;
-      }
+    if (this.game.snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+      this.gameOver();
+      return;
     }
-    
+
     this.game.snake.unshift(head);
-    
+
     // Check food collision
     if (head.x === this.game.food.x && head.y === this.game.food.y) {
       this.game.score++;
-      this.generateFood();
+      this.foodLeft--;
       
-      // Check win condition
-      if (this.game.score >= 5) {
+      if (this.foodLeft <= 0) {
         this.gameWin();
         return;
       }
+      
+      this.generateFood();
     } else {
       this.game.snake.pop();
     }
@@ -240,27 +226,29 @@ export class HelloComponent implements OnInit, AfterViewInit, OnDestroy {
     this.ctx.fillText('You completed the game!', canvas.width / 2, canvas.height / 2 + 25);
   }
 
+  private handleKeyPress = (e: KeyboardEvent) => {
+    if (!this.game.gameRunning) return;
+    
+    const key = e.key;
+    
+    // Prevent reverse direction
+    if (key === 'ArrowUp' && this.game.direction.y === 0) {
+      this.game.direction = { x: 0, y: -this.gridSize };
+      e.preventDefault();
+    } else if (key === 'ArrowDown' && this.game.direction.y === 0) {
+      this.game.direction = { x: 0, y: this.gridSize };
+      e.preventDefault();
+    } else if (key === 'ArrowLeft' && this.game.direction.x === 0) {
+      this.game.direction = { x: -this.gridSize, y: 0 };
+      e.preventDefault();
+    } else if (key === 'ArrowRight' && this.game.direction.x === 0) {
+      this.game.direction = { x: this.gridSize, y: 0 };
+      e.preventDefault();
+    }
+  }
+
   private setupKeyboardListeners() {
-    document.addEventListener('keydown', (e) => {
-      if (!this.game.gameRunning) return;
-      
-      const key = e.key;
-      
-      // Prevent reverse direction
-      if (key === 'ArrowUp' && this.game.direction.y === 0) {
-        this.game.direction = { x: 0, y: -this.gridSize };
-        e.preventDefault();
-      } else if (key === 'ArrowDown' && this.game.direction.y === 0) {
-        this.game.direction = { x: 0, y: this.gridSize };
-        e.preventDefault();
-      } else if (key === 'ArrowLeft' && this.game.direction.x === 0) {
-        this.game.direction = { x: -this.gridSize, y: 0 };
-        e.preventDefault();
-      } else if (key === 'ArrowRight' && this.game.direction.x === 0) {
-        this.game.direction = { x: this.gridSize, y: 0 };
-        e.preventDefault();
-      }
-    });
+    document.addEventListener('keydown', this.handleKeyPress);
   }
 
   startGame() {
@@ -293,7 +281,7 @@ export class HelloComponent implements OnInit, AfterViewInit, OnDestroy {
 
   openGithub() {
     if (this.gameCompleted) {
-      window.open('https://github.com/your-username', '_blank');
+      window.open('https://github.com/bhavesh-username', '_blank');
     }
   }
 

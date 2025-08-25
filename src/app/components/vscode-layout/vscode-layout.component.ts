@@ -30,14 +30,10 @@ export class VscodeLayoutComponent implements OnInit {
   
   menuStructure: MenuItem[] = [
     {
-      name: 'me',
-      icon: 'fas fa-user',
-      active: false,
-      expanded: true,
-      children: [
-        { name: '_hello', route: '/hello', icon: 'fas fa-home', active: false },
-        { name: '_about_me', route: '/about', icon: 'fas fa-info-circle', active: false }
-      ]
+      name: 'hello.js',
+      route: '/hello',
+      icon: 'fas fa-home',
+      active: false
     },
     {
       name: 'personal-info',
@@ -47,7 +43,9 @@ export class VscodeLayoutComponent implements OnInit {
       children: [
         { name: '_bio', route: '/personal-info?section=bio', icon: 'fas fa-file-alt', active: false },
         { name: '_interests', route: '/personal-info?section=interests', icon: 'fas fa-heart', active: false },
-        { name: '_education', route: '/personal-info?section=education', icon: 'fas fa-graduation-cap', active: false }
+        { name: '_education', route: '/personal-info?section=education', icon: 'fas fa-graduation-cap', active: false },
+        { name: '_hobbies', route: '/personal-info?section=hobbies', icon: 'fas fa-gamepad', active: false },
+        { name: '_languages', route: '/personal-info?section=languages', icon: 'fas fa-globe', active: false }
       ]
     },
     {
@@ -63,24 +61,21 @@ export class VscodeLayoutComponent implements OnInit {
       ]
     },
     {
-      name: 'other',
+      name: 'projects',
       icon: 'fas fa-folder',
       active: false,
       expanded: false,
       children: [
-        { name: '_projects', route: '/projects', icon: 'fas fa-laptop-code', active: false },
+        { name: '_portfolio', route: '/projects', icon: 'fas fa-laptop-code', active: false },
         { name: '_sessions', route: '/sessions', icon: 'fas fa-chalkboard-teacher', active: false },
         { name: '_articles', route: '/articles', icon: 'fas fa-newspaper', active: false }
       ]
     },
     {
-      name: 'contact',
+      name: 'contact.md',
+      route: '/contact',
       icon: 'fas fa-envelope',
-      active: false,
-      expanded: false,
-      children: [
-        { name: '_contact_me', route: '/contact', icon: 'fas fa-paper-plane', active: false }
-      ]
+      active: false
     }
   ];
 

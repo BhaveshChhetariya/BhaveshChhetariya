@@ -32,61 +32,61 @@ export class ProjectsComponent {
   projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with modern UI, payment integration, and admin dashboard.',
-      image: 'https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=E-Commerce',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
+      title: 'Portfolio Website',
+      description: 'A responsive portfolio website built with Angular 17, featuring VS Code theme and interactive elements.',
+      image: 'https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=Portfolio',
+      technologies: ['Angular', 'TypeScript', 'SCSS', 'HTML5'],
       category: 'web',
-      demoUrl: 'https://demo.example.com',
-      githubUrl: 'https://github.com/username/ecommerce'
+      demoUrl: 'https://portfolio-demo.com',
+      githubUrl: 'https://github.com/username/portfolio'
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'Mobile app for productivity and task tracking with real-time sync and collaboration features.',
-      image: 'https://via.placeholder.com/400x250/E74C3C/FFFFFF?text=Task+App',
-      technologies: ['Flutter', 'Firebase', 'Dart', 'Provider'],
-      category: 'mobile',
-      demoUrl: 'https://play.google.com/store/apps/details?id=com.example.tasks',
-      githubUrl: 'https://github.com/username/task-app'
+      title: 'Task Manager Application',
+      description: 'A full-stack task management app with user authentication, real-time updates, and responsive design.',
+      image: 'https://via.placeholder.com/400x250/E74C3C/FFFFFF?text=Task+Manager',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+      category: 'web',
+      demoUrl: 'https://taskmanager-demo.com',
+      githubUrl: 'https://github.com/username/task-manager'
     },
     {
       id: 3,
-      title: 'REST API Service',
-      description: 'Scalable REST API with authentication, real-time features, and comprehensive documentation.',
-      image: 'https://via.placeholder.com/400x250/27AE60/FFFFFF?text=REST+API',
-      technologies: ['Express.js', 'PostgreSQL', 'Redis', 'JWT', 'Swagger'],
-      category: 'api',
-      githubUrl: 'https://github.com/username/api-service'
+      title: 'Weather Dashboard',
+      description: 'A weather application that displays current conditions and forecasts with beautiful visualizations.',
+      image: 'https://via.placeholder.com/400x250/27AE60/FFFFFF?text=Weather+App',
+      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Weather API'],
+      category: 'web',
+      demoUrl: 'https://weather-dashboard-demo.com',
+      githubUrl: 'https://github.com/username/weather-dashboard'
     },
     {
       id: 4,
-      title: 'Social Media Dashboard',
-      description: 'Analytics dashboard for social media management with data visualization and reporting.',
-      image: 'https://via.placeholder.com/400x250/9B59B6/FFFFFF?text=Dashboard',
-      technologies: ['Vue.js', 'Chart.js', 'Node.js', 'MySQL'],
-      category: 'web',
-      demoUrl: 'https://dashboard.example.com',
-      githubUrl: 'https://github.com/username/social-dashboard'
+      title: 'RESTful API Service',
+      description: 'A robust REST API built with Node.js and Express, featuring authentication, validation, and documentation.',
+      image: 'https://via.placeholder.com/400x250/8E44AD/FFFFFF?text=REST+API',
+      technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Swagger'],
+      category: 'api',
+      githubUrl: 'https://github.com/username/rest-api'
     },
     {
       id: 5,
-      title: 'Weather App',
-      description: 'Beautiful weather application with location-based forecasts and interactive maps.',
-      image: 'https://via.placeholder.com/400x250/3498DB/FFFFFF?text=Weather+App',
-      technologies: ['React Native', 'OpenWeather API', 'Maps SDK'],
-      category: 'mobile',
-      demoUrl: 'https://apps.apple.com/app/weather-example',
-      githubUrl: 'https://github.com/username/weather-app'
+      title: 'E-Learning Platform',
+      description: 'An online learning platform with course management, video streaming, and progress tracking.',
+      image: 'https://via.placeholder.com/400x250/F39C12/FFFFFF?text=E-Learning',
+      technologies: ['Angular', 'Firebase', 'TypeScript', 'Material UI'],
+      category: 'web',
+      demoUrl: 'https://elearning-demo.com',
+      githubUrl: 'https://github.com/username/elearning-platform'
     },
     {
       id: 6,
-      title: 'GraphQL API',
-      description: 'Modern GraphQL API with real-time subscriptions and advanced caching strategies.',
-      image: 'https://via.placeholder.com/400x250/E67E22/FFFFFF?text=GraphQL',
-      technologies: ['GraphQL', 'Apollo Server', 'MongoDB', 'Redis'],
-      category: 'api',
-      githubUrl: 'https://github.com/username/graphql-api'
+      title: 'Mobile Expense Tracker',
+      description: 'A mobile app for tracking personal expenses with categories, budgets, and financial insights.',
+      image: 'https://via.placeholder.com/400x250/16A085/FFFFFF?text=Expense+Tracker',
+      technologies: ['React Native', 'Redux', 'SQLite', 'Chart.js'],
+      category: 'mobile',
+      githubUrl: 'https://github.com/username/expense-tracker'
     }
   ];
 
@@ -101,23 +101,28 @@ export class ProjectsComponent {
     this.activeCategory = category;
   }
 
-  getProjectCount(categoryKey: string): number {
-    if (categoryKey === 'all') {
-      return this.projects.length;
-    }
-    return this.projects.filter(p => p.category === categoryKey).length;
-  }
-
-  getCategoryName(categoryKey: string): string {
-    const category = this.categories.find(c => c.key === categoryKey);
-    return category ? category.name : categoryKey;
-  }
-
   openDemo(url: string) {
     window.open(url, '_blank');
   }
 
   openGithub(url: string) {
     window.open(url, '_blank');
+  }
+
+  getProjectCount(category: string): number {
+    if (category === 'all') {
+      return this.projects.length;
+    }
+    return this.projects.filter(project => project.category === category).length;
+  }
+
+  getCategoryName(category: string): string {
+    const categoryMap: { [key: string]: string } = {
+      'web': 'Web App',
+      'mobile': 'Mobile App',
+      'api': 'API Service',
+      'all': 'All Projects'
+    };
+    return categoryMap[category] || category;
   }
 }

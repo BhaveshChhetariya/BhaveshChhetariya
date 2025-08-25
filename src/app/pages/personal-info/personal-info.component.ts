@@ -30,50 +30,52 @@ export class PersonalInfoComponent implements OnInit {
   
   personalInfo: PersonalInfo = {
     bio: [
-      "I'm a passionate developer focused on building smooth,",
-      "intuitive user experiences with clean code at the core.",
+      "I'm a dedicated software developer with a passion for creating",
+      "innovative solutions and building scalable applications.",
       "",
-      "I love shaping ideas into pixel perfect apps and making sure",
-      "every detail from animation to accessibility feels",
-      "intentional.",
+      "With expertise in modern web technologies and a strong foundation",
+      "in computer science principles, I enjoy tackling complex problems",
+      "and delivering high-quality software solutions.",
       "",
-      "Alongside dev work, I document everything I learn and share",
-      "insights that help other developers grow. 😊"
+      "I believe in continuous learning and staying updated with the",
+      "latest industry trends and best practices. 🚀"
     ],
     interests: [
-      "🎮 Gaming & Interactive Experiences",
-      "🎨 UI/UX Design & Animation",
-      "📱 Mobile App Development",
+      "💻 Full Stack Development",
       "🌐 Web Technologies & Frameworks",
-      "🤖 AI & Machine Learning",
-      "📚 Technical Writing & Blogging",
-      "🎵 Music & Audio Programming",
-      "🏃‍♂️ Fitness & Outdoor Activities"
+      "📱 Mobile Application Development",
+      "☁️ Cloud Computing & DevOps",
+      "🤖 Artificial Intelligence & Machine Learning",
+      "🔒 Cybersecurity & Best Practices",
+      "📊 Data Analysis & Visualization",
+      "🎯 Problem Solving & Algorithm Design"
     ],
     education: [
       {
-        degree: "Bachelor of Computer Science",
-        institution: "Your University",
-        year: "2018-2022",
-        description: "Focused on software engineering, algorithms, and web development. Graduated with honors."
+        degree: "Bachelor of Technology in Computer Science",
+        institution: "University of Technology",
+        year: "2019-2023",
+        description: "Specialized in software engineering, data structures, algorithms, and web development. Maintained excellent academic performance."
       },
       {
-        degree: "Full Stack Web Development Bootcamp",
-        institution: "Tech Academy",
-        year: "2022",
-        description: "Intensive 6-month program covering modern web technologies including React, Node.js, and databases."
+        degree: "Professional Certification in Cloud Computing",
+        institution: "AWS Training Center",
+        year: "2023",
+        description: "Comprehensive training in cloud architecture, deployment strategies, and modern DevOps practices."
       }
     ],
     hobbies: [
-      "Playing around with code, UI challenges, and brain teasers—",
-      "they're my kind of game.",
+      "When I'm not coding, you'll find me exploring new technologies,",
+      "contributing to open-source projects, or working on personal",
+      "development initiatives.",
       "",
-      "Give me a tricky layout or a bug to squash, and I'm all in!"
+      "I also enjoy reading tech blogs, attending developer meetups,",
+      "and sharing knowledge with the developer community."
     ],
     languages: [
       { name: "English", level: "Native" },
-      { name: "Spanish", level: "Conversational" },
-      { name: "French", level: "Basic" }
+      { name: "Hindi", level: "Native" },
+      { name: "Spanish", level: "Basic" }
     ]
   };
 
@@ -96,6 +98,15 @@ export class PersonalInfoComponent implements OnInit {
     return Array.from({ length: content.length }, (_, i) => i + 1);
   }
 
+  getEducationLines(): number[] {
+    let totalLines = 4; // Base lines for comments and array declaration
+    this.personalInfo.education.forEach(edu => {
+      totalLines += 6; // Each education entry has 6 lines
+    });
+    totalLines += 1; // Closing bracket
+    return Array.from({ length: totalLines }, (_, i) => i + 1);
+  }
+
   getLanguageProgress(level: string): string {
     switch (level.toLowerCase()) {
       case 'native':
@@ -107,5 +118,16 @@ export class PersonalInfoComponent implements OnInit {
       default:
         return '0%';
     }
+  }
+
+  getSectionFileName(): string {
+    const fileNames: { [key: string]: string } = {
+      'bio': 'bio.md',
+      'interests': 'interests.json',
+      'education': 'education.js',
+      'hobbies': 'hobbies.txt',
+      'languages': 'languages.yml'
+    };
+    return fileNames[this.activeSection] || 'personal-info';
   }
 }

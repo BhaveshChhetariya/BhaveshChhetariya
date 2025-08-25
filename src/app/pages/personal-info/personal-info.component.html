@@ -1,79 +1,222 @@
 <div class="personal-info-container fade-in">
 
-
   <div class="info-content">
-    <!-- Bio Section -->
     <div class="content-section" *ngIf="activeSection === 'bio'">
       <div class="file-header">
-        <span class="file-name">bio.txt</span>
+        <span class="file-name">bio.md</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
       </div>
       
-      <div class="simple-content">
-        <h3>About Me</h3>
-        <div *ngFor="let line of personalInfo.bio">
-          <p>{{ line }}</p>
+      <div class="markdown-content">
+        <div class="intro-code-block">
+          <div class="line-numbers">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+          </div>
+          <div class="code-content">
+            <div class="code-line">
+              <span class="keyword">const</span> 
+              <span class="variable">personalInfo</span> 
+              <span class="operator">=</span> 
+              <span class="bracket">{{ '{' }}</span>
+            </div>
+            <div class="code-line indent">
+              <span class="property">name</span><span class="colon">:</span> 
+              <span class="string">"Bhavesh"</span><span class="comma">,</span>
+            </div>
+            <div class="code-line indent">
+              <span class="property">role</span><span class="colon">:</span> 
+              <span class="string">"Full Stack Developer"</span><span class="comma">,</span>
+            </div>
+            <div class="code-line indent">
+              <span class="property">location</span><span class="colon">:</span> 
+              <span class="string">"Mumbai, India"</span>
+            </div>
+            <div class="code-line">
+              <span class="bracket">{{ '}' }}</span><span class="semicolon">;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bio-content">
+          <h2># About Me</h2>
+          <div class="bio-text">
+            <p *ngFor="let line of personalInfo.bio">{{ line }}</p>
+          </div>
+
+          <div class="personal-stats">
+            <div class="stat-card">
+              <div class="stat-icon">🎂</div>
+              <div class="stat-info">
+                <div class="stat-label">Age</div>
+                <div class="stat-value">25 years</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">📍</div>
+              <div class="stat-info">
+                <div class="stat-label">Location</div>
+                <div class="stat-value">Mumbai, India</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🎓</div>
+              <div class="stat-info">
+                <div class="stat-label">Education</div>
+                <div class="stat-value">BTech CS</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">💼</div>
+              <div class="stat-info">
+                <div class="stat-label">Experience</div>
+                <div class="stat-value">3+ Years</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Interests Section -->
+
     <div class="content-section" *ngIf="activeSection === 'interests'">
       <div class="file-header">
         <span class="file-name">interests.json</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
       </div>
       
-      <div class="simple-content">
-        <h3>My Interests</h3>
-        <ul>
-          <li *ngFor="let interest of personalInfo.interests">{{ interest }}</li>
-        </ul>
+      <div class="json-content">
+        <div class="line-numbers">
+          <span *ngFor="let line of getLineNumbers(personalInfo.interests); let i = index">{{ i + 1 }}</span>
+        </div>
+        <div class="json-code">
+          <div class="code-line">
+            <span class="bracket">{{ '{' }}</span>
+          </div>
+          <div class="code-line indent">
+            <span class="property">"interests"</span><span class="colon">:</span> 
+            <span class="bracket">[</span>
+          </div>
+          <div class="code-line indent2" *ngFor="let interest of personalInfo.interests; let last = last">
+            <span class="string">"{{ interest }}"</span><span class="comma" *ngIf="!last">,</span>
+          </div>
+          <div class="code-line indent">
+            <span class="bracket">]</span>
+          </div>
+          <div class="code-line">
+            <span class="bracket">{{ '}' }}</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Education Section -->
     <div class="content-section" *ngIf="activeSection === 'education'">
       <div class="file-header">
-        <span class="file-name">education.md</span>
+        <span class="file-name">education.js</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
       </div>
       
-      <div class="education-content">
-        <div class="education-item" *ngFor="let edu of personalInfo.education">
-          <div class="education-header">
-            <h3>{{ edu.degree }}</h3>
-            <span class="year">{{ edu.year }}</span>
+      <div class="code-editor">
+        <div class="line-numbers">
+          <span *ngFor="let line of getEducationLines(); let i = index">{{ i + 1 }}</span>
+        </div>
+        <div class="code-content">
+          <div class="code-line comment">/**</div>
+          <div class="code-line comment"> * Educational Background</div>
+          <div class="code-line comment"> */</div>
+          <div class="code-line">
+            <span class="keyword">const</span> 
+            <span class="variable">education</span> 
+            <span class="operator">=</span> 
+            <span class="bracket">[</span>
           </div>
-          <div class="institution">
-            <i class="fas fa-university"></i>
-            <span>{{ edu.institution }}</span>
+          <div *ngFor="let edu of personalInfo.education; let last = last">
+            <div class="code-line indent">
+              <span class="bracket">{{ '{' }}</span>
+            </div>
+            <div class="code-line indent2">
+              <span class="property">degree</span><span class="colon">:</span> 
+              <span class="string">"{{ edu.degree }}"</span><span class="comma">,</span>
+            </div>
+            <div class="code-line indent2">
+              <span class="property">institution</span><span class="colon">:</span> 
+              <span class="string">"{{ edu.institution }}"</span><span class="comma">,</span>
+            </div>
+            <div class="code-line indent2">
+              <span class="property">year</span><span class="colon">:</span> 
+              <span class="string">"{{ edu.year }}"</span><span class="comma">,</span>
+            </div>
+            <div class="code-line indent2">
+              <span class="property">description</span><span class="colon">:</span> 
+              <span class="string">"{{ edu.description }}"</span>
+            </div>
+            <div class="code-line indent">
+              <span class="bracket">{{ '}' }}</span><span class="comma" *ngIf="!last">,</span>
+            </div>
           </div>
-          <p class="description">{{ edu.description }}</p>
+          <div class="code-line">
+            <span class="bracket">];</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="info-preview">
-    <div class="preview-header">
-      <i class="fas fa-eye"></i>
-      <span>Preview</span>
-    </div>
-    
-    <div class="preview-content">
-      <div class="profile-card">
-        <div class="profile-avatar">
-          <img src="https://via.placeholder.com/80x80/4A90E2/FFFFFF?text=You" alt="Profile">
+    <!-- Hobbies Section -->
+    <div class="content-section" *ngIf="activeSection === 'hobbies'">
+      <div class="file-header">
+        <span class="file-name">hobbies.txt</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
         </div>
-        <div class="profile-details">
-          <h3>Your Name</h3>
-          <p class="title">Full Stack Developer</p>
-          <div class="stats">
-            <div class="stat">
-              <span class="number">{{ personalInfo.interests.length }}</span>
-              <span class="label">Interests</span>
-            </div>
-            <div class="stat">
-              <span class="number">{{ personalInfo.education.length }}</span>
-              <span class="label">Degrees</span>
+      </div>
+      
+      <div class="text-content">
+        <div class="hobbies-grid">
+          <div class="hobby-item" *ngFor="let hobby of personalInfo.hobbies">
+            <div class="hobby-icon">🎯</div>
+            <p>{{ hobby }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Languages Section -->
+    <div class="content-section" *ngIf="activeSection === 'languages'">
+      <div class="file-header">
+        <span class="file-name">languages.yml</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="yaml-content">
+        <div class="line-numbers">
+          <span *ngFor="let lang of personalInfo.languages; let i = index">{{ i + 1 }}</span>
+        </div>
+        <div class="yaml-code">
+          <div class="code-line comment"># Languages I speak</div>
+          <div class="code-line" *ngFor="let language of personalInfo.languages">
+            <span class="property">{{ language.name }}</span><span class="colon">:</span>
+            <span class="string"> {{ language.level }}</span>
+            <div class="language-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" [style.width]="getLanguageProgress(language.level)"></div>
+              </div>
             </div>
           </div>
         </div>
