@@ -985,3 +985,489 @@
     gap: 10px;
   }
 }
+/* VS Code Markdown Editor Styles */
+.markdown-editor {
+  display: flex;
+  background-color: var(--vscode-bg);
+  border: 1px solid var(--vscode-border);
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+
+  .line-numbers {
+    background-color: var(--vscode-sidebar-bg);
+    color: var(--vscode-text-muted);
+    padding: 16px 12px;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid var(--vscode-border);
+    min-width: 50px;
+    font-size: 13px;
+
+    span {
+      display: block;
+      line-height: 1.5;
+    }
+  }
+
+  .markdown-content {
+    flex: 1;
+    padding: 16px 20px;
+    overflow-x: auto;
+
+    .md-line {
+      line-height: 1.5;
+      margin-bottom: 0;
+      min-height: 21px; // Consistent line height
+
+      &.md-empty {
+        height: 21px;
+      }
+    }
+
+    // Markdown Headers
+    .md-header {
+      color: #4fc3f7;
+      font-weight: 600;
+      font-size: 24px;
+    }
+
+    .md-subheader {
+      color: #4fc3f7;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    // Regular text with markdown formatting
+    .md-text {
+      color: var(--vscode-text);
+      
+      // Bold text
+      strong, **strong** {
+        color: #ffd700;
+        font-weight: 600;
+      }
+      
+      // Italic text
+      em, *em* {
+        color: #98c379;
+        font-style: italic;
+      }
+    }
+
+    // List items
+    .md-list {
+      color: var(--vscode-text);
+      
+      strong {
+        color: #ffd700;
+        font-weight: 600;
+      }
+    }
+
+    // Blockquotes
+    .md-blockquote {
+      color: #98c379;
+      border-left: 4px solid #98c379;
+      padding-left: 12px;
+      font-style: italic;
+      margin-left: 0;
+    }
+
+    // Code blocks
+    .md-code-block {
+      color: #ce9178;
+      background-color: var(--vscode-sidebar-bg);
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+
+    .md-code {
+      color: var(--vscode-text);
+      background-color: var(--vscode-sidebar-bg);
+      padding: 0 4px;
+      font-family: 'Fira Code', monospace;
+      
+      // JavaScript syntax highlighting
+      .keyword { color: #569cd6; }
+      .string { color: #ce9178; }
+      .property { color: #92c5f7; }
+      .bracket { color: #ffd700; }
+      .colon { color: var(--vscode-text); }
+      .comma { color: var(--vscode-text); }
+    }
+
+    // Links
+    .md-link {
+      color: #4fc3f7;
+      
+      a {
+        color: #4fc3f7;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // Divider
+    .md-divider {
+      color: var(--vscode-border);
+      border-bottom: 1px solid var(--vscode-border);
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+    }
+
+    // Italic text
+    .md-italic {
+      color: #98c379;
+      font-style: italic;
+    }
+  }
+}
+
+// Responsive design for markdown editor
+@media (max-width: 768px) {
+  .markdown-editor {
+    font-size: 13px;
+    
+    .line-numbers {
+      padding: 12px 8px;
+      min-width: 40px;
+      font-size: 12px;
+    }
+    
+    .markdown-content {
+      padding: 12px 16px;
+      
+      .md-header {
+        font-size: 20px;
+      }
+      
+      .md-subheader {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .markdown-editor {
+    font-size: 12px;
+    
+    .line-numbers {
+      padding: 10px 6px;
+      min-width: 35px;
+      font-size: 11px;
+    }
+    
+    .markdown-content {
+      padding: 10px 12px;
+      
+      .md-header {
+        font-size: 18px;
+      }
+      
+      .md-subheader {
+        font-size: 14px;
+      }
+    }
+  }
+}
+/* VS Code JSON Editor Styles */
+.json-editor {
+  display: flex;
+  background-color: var(--vscode-bg);
+  border: 1px solid var(--vscode-border);
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+
+  .line-numbers {
+    background-color: var(--vscode-sidebar-bg);
+    color: var(--vscode-text-muted);
+    padding: 16px 12px;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid var(--vscode-border);
+    min-width: 50px;
+    font-size: 13px;
+
+    span {
+      display: block;
+      line-height: 1.5;
+    }
+  }
+
+  .json-content {
+    flex: 1;
+    padding: 16px 20px;
+    overflow-x: auto;
+
+    .json-line {
+      line-height: 1.5;
+      margin-bottom: 0;
+      min-height: 21px;
+
+      &.json-empty {
+        height: 21px;
+      }
+    }
+
+    .json-bracket { color: #ffd700; }
+    .json-property { color: #92c5f7; }
+    .json-string { color: #ce9178; }
+    .json-colon { color: var(--vscode-text); }
+    .json-comma { color: var(--vscode-text); }
+    .json-indent { color: transparent; }
+  }
+}
+
+/* VS Code JavaScript Editor Styles */
+.js-editor {
+  display: flex;
+  background-color: var(--vscode-bg);
+  border: 1px solid var(--vscode-border);
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+
+  .line-numbers {
+    background-color: var(--vscode-sidebar-bg);
+    color: var(--vscode-text-muted);
+    padding: 16px 12px;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid var(--vscode-border);
+    min-width: 50px;
+    font-size: 13px;
+
+    span {
+      display: block;
+      line-height: 1.5;
+    }
+  }
+
+  .js-content {
+    flex: 1;
+    padding: 16px 20px;
+    overflow-x: auto;
+
+    .js-line {
+      line-height: 1.5;
+      margin-bottom: 0;
+      min-height: 21px;
+
+      &.js-empty {
+        height: 21px;
+      }
+    }
+
+    .js-comment { color: #6a9955; }
+    .js-keyword { color: #569cd6; }
+    .js-variable { color: #9cdcfe; }
+    .js-operator { color: var(--vscode-text); }
+    .js-bracket { color: #ffd700; }
+    .js-property { color: #92c5f7; }
+    .js-string { color: #ce9178; }
+    .js-number { color: #b5cea8; }
+    .js-colon { color: var(--vscode-text); }
+    .js-comma { color: var(--vscode-text); }
+    .js-semicolon { color: var(--vscode-text); }
+    .js-indent { color: transparent; }
+  }
+}
+
+// Responsive design for JSON and JS editors
+@media (max-width: 768px) {
+  .json-editor, .js-editor {
+    font-size: 13px;
+    
+    .line-numbers {
+      padding: 12px 8px;
+      min-width: 40px;
+      font-size: 12px;
+    }
+    
+    .json-content, .js-content {
+      padding: 12px 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .json-editor, .js-editor {
+    font-size: 12px;
+    
+    .line-numbers {
+      padding: 10px 6px;
+      min-width: 35px;
+      font-size: 11px;
+    }
+    
+    .json-content, .js-content {
+      padding: 10px 12px;
+    }
+  }
+}
+/* VS Code Text Editor Styles */
+.text-editor {
+  display: flex;
+  background-color: var(--vscode-bg);
+  border: 1px solid var(--vscode-border);
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+
+  .line-numbers {
+    background-color: var(--vscode-sidebar-bg);
+    color: var(--vscode-text-muted);
+    padding: 16px 12px;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid var(--vscode-border);
+    min-width: 50px;
+    font-size: 13px;
+
+    span {
+      display: block;
+      line-height: 1.5;
+    }
+  }
+
+  .text-content {
+    flex: 1;
+    padding: 16px 20px;
+    overflow-x: auto;
+
+    .text-line {
+      line-height: 1.5;
+      margin-bottom: 0;
+      min-height: 21px;
+
+      &.text-empty {
+        height: 21px;
+      }
+    }
+
+    .text-header { 
+      color: #4fc3f7; 
+      font-weight: 600; 
+      font-size: 18px; 
+    }
+    .text-divider { 
+      color: var(--vscode-text-muted); 
+    }
+    .text-category { 
+      color: #ffd700; 
+      font-weight: 500; 
+    }
+    .text-item { 
+      color: #98c379; 
+      font-weight: 500; 
+    }
+    .text-description { 
+      color: var(--vscode-text-muted); 
+      font-style: italic; 
+    }
+    .text-footer { 
+      color: #4fc3f7; 
+      font-style: italic; 
+    }
+  }
+}
+
+/* VS Code YAML Editor Styles */
+.yaml-editor {
+  display: flex;
+  background-color: var(--vscode-bg);
+  border: 1px solid var(--vscode-border);
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+
+  .line-numbers {
+    background-color: var(--vscode-sidebar-bg);
+    color: var(--vscode-text-muted);
+    padding: 16px 12px;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid var(--vscode-border);
+    min-width: 50px;
+    font-size: 13px;
+
+    span {
+      display: block;
+      line-height: 1.5;
+    }
+  }
+
+  .yaml-content {
+    flex: 1;
+    padding: 16px 20px;
+    overflow-x: auto;
+
+    .yaml-line {
+      line-height: 1.5;
+      margin-bottom: 0;
+      min-height: 21px;
+
+      &.yaml-empty {
+        height: 21px;
+      }
+    }
+
+    .yaml-comment { color: #6a9955; }
+    .yaml-key { color: #92c5f7; }
+    .yaml-string { color: #ce9178; }
+    .yaml-number { color: #b5cea8; }
+    .yaml-colon { color: var(--vscode-text); }
+    .yaml-list { color: #ffd700; }
+    .yaml-indent { color: transparent; }
+  }
+}
+
+// Responsive design for text and YAML editors
+@media (max-width: 768px) {
+  .text-editor, .yaml-editor {
+    font-size: 13px;
+    
+    .line-numbers {
+      padding: 12px 8px;
+      min-width: 40px;
+      font-size: 12px;
+    }
+    
+    .text-content, .yaml-content {
+      padding: 12px 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .text-editor, .yaml-editor {
+    font-size: 12px;
+    
+    .line-numbers {
+      padding: 10px 6px;
+      min-width: 35px;
+      font-size: 11px;
+    }
+    
+    .text-content, .yaml-content {
+      padding: 10px 12px;
+    }
+  }
+}

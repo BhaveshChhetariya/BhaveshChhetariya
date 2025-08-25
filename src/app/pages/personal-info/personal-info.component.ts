@@ -130,4 +130,29 @@ export class PersonalInfoComponent implements OnInit {
     };
     return fileNames[this.activeSection] || 'personal-info';
   }
+
+  getBioLineNumbers(): number[] {
+    // Total lines for the bio markdown content
+    return Array.from({ length: 45 }, (_, i) => i + 1);
+  }
+
+  getInterestsLineNumbers(): number[] {
+    // Total lines for the interests JSON content (with empty lines)
+    return Array.from({ length: 27 }, (_, i) => i + 1);
+  }
+
+  getEducationLineNumbers(): number[] {
+    // Total lines for the education JavaScript content
+    return Array.from({ length: 55 }, (_, i) => i + 1);
+  }
+
+  getHobbiesLineNumbers(): number[] {
+    // Total lines for the hobbies text content
+    return Array.from({ length: 40 }, (_, i) => i + 1);
+  }
+
+  getLanguagesLineNumbers(): number[] {
+    // Total lines for the languages YAML content
+    return Array.from({ length: 50 }, (_, i) => i + 1);
+  }
 }
