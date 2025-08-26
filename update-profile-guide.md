@@ -4,7 +4,7 @@
 
 ### 1. Personal Information Updates
 
-**File**: `src/app/pages/personal-info/personal-info.component.ts`
+**File**: `root/app/pages/personal-info/personal-info.component.ts`
 
 Update the `personalInfo` object with your details:
 
@@ -36,7 +36,7 @@ personalInfo: PersonalInfo = {
 
 ### 2. Professional Information Updates
 
-**File**: `src/app/pages/professional-info/professional-info.component.ts`
+**File**: `root/app/pages/professional-info/professional-info.component.ts`
 
 Update the `professionalInfo` object:
 
@@ -77,7 +77,7 @@ professionalInfo: ProfessionalInfo = {
 
 ### 3. Contact Information Updates
 
-**File**: `src/app/pages/contact/contact.component.ts`
+**File**: `root/app/pages/contact/contact.component.ts`
 
 Update your contact details:
 
@@ -93,7 +93,7 @@ contactInfo = {
 
 ### 4. Projects Section Updates
 
-**File**: `src/app/pages/projects/projects.component.ts`
+**File**: `root/app/pages/projects/projects.component.ts`
 
 Add your actual projects:
 
@@ -113,13 +113,13 @@ projects = [
 
 ### 5. Profile Image and Assets
 
-1. Add your professional photo to `src/assets/images/`
+1. Add your professional photo to `root/assets/images/`
 2. Update the image reference in components
 3. Add project screenshots to showcase your work
 
 ### 6. SEO and Meta Information
 
-**File**: `src/index.html`
+**File**: `root/index.html`
 
 Update the meta tags:
 

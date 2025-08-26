@@ -91,10 +91,10 @@ const profileData = {
 
 // File paths
 const files = {
-  personalInfo: 'src/app/pages/personal-info/personal-info.component.ts',
-  professionalInfo: 'src/app/pages/professional-info/professional-info.component.ts',
-  contact: 'src/app/pages/contact/contact.component.ts',
-  projects: 'src/app/pages/projects/projects.component.ts'
+  personalInfo: 'root/app/pages/personal-info/personal-info.component.ts',
+  professionalInfo: 'root/app/pages/professional-info/professional-info.component.ts',
+  contact: 'root/app/pages/contact/contact.component.ts',
+  projects: 'root/app/pages/projects/projects.component.ts'
 };
 
 function updatePersonalInfo() {
@@ -141,9 +141,9 @@ function showInstructions() {
   updateProjects();
   
   console.log('🎨 STEP 5: Customize styling and branding');
-  console.log('   - Update colors in src/styles.scss');
-  console.log('   - Add your professional photo to src/assets/images/');
-  console.log('   - Update favicon and meta tags in src/index.html\n');
+  console.log('   - Update colors in root/styles.scss');
+  console.log('   - Add your professional photo to root/assets/images/');
+  console.log('   - Update favicon and meta tags in root/index.html\n');
   
   console.log('🧪 STEP 6: Test your changes');
   console.log('   - Run: npm start');
