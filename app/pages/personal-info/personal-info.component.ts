@@ -137,8 +137,8 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   getInterestsLineNumbers(): number[] {
-    // Total lines for the interests JSON content (with empty lines)
-    return Array.from({ length: 27 }, (_, i) => i + 1);
+    // Total lines for the interests TypeScript content (with empty lines)
+    return Array.from({ length: 85 }, (_, i) => i + 1);
   }
 
   getEducationLineNumbers(): number[] {

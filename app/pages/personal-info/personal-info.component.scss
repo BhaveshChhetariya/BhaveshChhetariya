@@ -1471,3 +1471,414 @@
     }
   }
 }
+
+/* Enhanced Code Editor Styles for TypeScript */
+.code-editor {
+  display: flex;
+  background-color: var(--vscode-bg);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .line-numbers {
+    background-color: #2d2d30;
+    color: #858585;
+    padding: 15px 10px;
+    text-align: right;
+    user-select: none;
+    min-width: 50px;
+    border-right: 1px solid var(--vscode-border);
+
+    span {
+      display: block;
+      line-height: 1.5;
+
+      @media (max-width: 768px) {
+        line-height: 1.4;
+      }
+
+      @media (max-width: 480px) {
+        line-height: 1.3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 12px 8px;
+      min-width: 45px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px 6px;
+      min-width: 40px;
+    }
+  }
+
+  .code-content {
+    flex: 1;
+    padding: 15px;
+    overflow-x: auto;
+
+    @media (max-width: 768px) {
+      padding: 12px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px;
+    }
+
+    .code-line {
+      line-height: 1.5;
+      white-space: pre;
+
+      &.code-empty {
+        height: 1.5em;
+      }
+
+      @media (max-width: 768px) {
+        line-height: 1.4;
+
+        &.code-empty {
+          height: 1.4em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        line-height: 1.3;
+
+        &.code-empty {
+          height: 1.3em;
+        }
+      }
+
+      // TypeScript syntax highlighting
+      .comment {
+        color: #6a9955;
+        font-style: italic;
+      }
+
+      .keyword {
+        color: #569cd6;
+        font-weight: 500;
+      }
+
+      .type {
+        color: #4ec9b0;
+        font-weight: 500;
+      }
+
+      .property {
+        color: #9cdcfe;
+      }
+
+      .variable {
+        color: #9cdcfe;
+      }
+
+      .string {
+        color: #ce9178;
+      }
+
+      .number {
+        color: #b5cea8;
+      }
+
+      .bracket {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      .colon {
+        color: #d4d4d4;
+      }
+
+      .semicolon {
+        color: #d4d4d4;
+      }
+
+      .comma {
+        color: #d4d4d4;
+      }
+
+      .operator {
+        color: #d4d4d4;
+        font-weight: bold;
+      }
+
+      .indent {
+        color: transparent;
+      }
+
+      // Hover effects
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+  }
+}
+
+/* Enhanced styling for hobbies section with terminal-like appearance */
+.terminal-editor {
+  display: flex;
+  background-color: #0c0c0c;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .line-numbers {
+    background-color: #1a1a1a;
+    color: #666666;
+    padding: 15px 10px;
+    text-align: right;
+    user-select: none;
+    min-width: 50px;
+    border-right: 1px solid #333333;
+
+    span {
+      display: block;
+      line-height: 1.5;
+
+      @media (max-width: 768px) {
+        line-height: 1.4;
+      }
+
+      @media (max-width: 480px) {
+        line-height: 1.3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 12px 8px;
+      min-width: 45px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px 6px;
+      min-width: 40px;
+    }
+  }
+
+  .terminal-content {
+    flex: 1;
+    padding: 15px;
+    overflow-x: auto;
+    color: #00ff00;
+
+    @media (max-width: 768px) {
+      padding: 12px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px;
+    }
+
+    .terminal-line {
+      line-height: 1.5;
+      white-space: pre;
+
+      &.terminal-empty {
+        height: 1.5em;
+      }
+
+      @media (max-width: 768px) {
+        line-height: 1.4;
+
+        &.terminal-empty {
+          height: 1.4em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        line-height: 1.3;
+
+        &.terminal-empty {
+          height: 1.3em;
+        }
+      }
+
+      .terminal-prompt {
+        color: #00ff00;
+        font-weight: bold;
+      }
+
+      .terminal-command {
+        color: #ffffff;
+      }
+
+      .terminal-output {
+        color: #cccccc;
+      }
+
+      .terminal-header {
+        color: #ffff00;
+        font-weight: bold;
+      }
+
+      .terminal-divider {
+        color: #666666;
+      }
+
+      .terminal-emoji {
+        color: #ffffff;
+      }
+
+      // Hover effects
+      &:hover {
+        background-color: rgba(0, 255, 0, 0.1);
+      }
+    }
+  }
+}
+
+/* Enhanced styling for languages section with YAML appearance */
+.yaml-editor {
+  display: flex;
+  background-color: var(--vscode-bg);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .line-numbers {
+    background-color: #2d2d30;
+    color: #858585;
+    padding: 15px 10px;
+    text-align: right;
+    user-select: none;
+    min-width: 50px;
+    border-right: 1px solid var(--vscode-border);
+
+    span {
+      display: block;
+      line-height: 1.5;
+
+      @media (max-width: 768px) {
+        line-height: 1.4;
+      }
+
+      @media (max-width: 480px) {
+        line-height: 1.3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 12px 8px;
+      min-width: 45px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px 6px;
+      min-width: 40px;
+    }
+  }
+
+  .yaml-content {
+    flex: 1;
+    padding: 15px;
+    overflow-x: auto;
+
+    @media (max-width: 768px) {
+      padding: 12px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px;
+    }
+
+    .yaml-line {
+      line-height: 1.5;
+      white-space: pre;
+
+      &.yaml-empty {
+        height: 1.5em;
+      }
+
+      @media (max-width: 768px) {
+        line-height: 1.4;
+
+        &.yaml-empty {
+          height: 1.4em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        line-height: 1.3;
+
+        &.yaml-empty {
+          height: 1.3em;
+        }
+      }
+
+      // YAML syntax highlighting
+      .yaml-key {
+        color: #9cdcfe;
+        font-weight: 500;
+      }
+
+      .yaml-value {
+        color: #ce9178;
+      }
+
+      .yaml-comment {
+        color: #6a9955;
+        font-style: italic;
+      }
+
+      .yaml-list-item {
+        color: #d4d4d4;
+      }
+
+      .yaml-indent {
+        color: transparent;
+      }
+
+      .yaml-colon {
+        color: #d4d4d4;
+      }
+
+      .yaml-dash {
+        color: #569cd6;
+        font-weight: bold;
+      }
+
+      // Hover effects
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+  }
+}

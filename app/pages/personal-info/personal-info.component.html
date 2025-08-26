@@ -150,14 +150,14 @@
     <!-- Interests Section -->
     <div class="content-section" *ngIf="activeSection === 'interests'">
       <div class="file-header">
-        <span class="file-name">interests.json</span>
+        <span class="file-name">interests.ts</span>
         <div class="file-actions">
           <i class="fas fa-copy" title="Copy"></i>
           <i class="fas fa-download" title="Download"></i>
         </div>
       </div>
       
-      <div class="json-editor">
+      <div class="code-editor">
         <!-- Line Numbers -->
         <div class="line-numbers">
           <span *ngFor="let line of getInterestsLineNumbers(); let i = index">{{ i + 1 }}</span>
