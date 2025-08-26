@@ -1,0 +1,136 @@
+<div class="vscode-container">
+  <!-- Title Bar -->
+  <div class="title-bar">
+    <div class="title-bar-left">
+      <div class="window-controls">
+        <span class="control close"></span>
+        <span class="control minimize"></span>
+        <span class="control maximize"></span>
+      </div>
+      <span class="title">Bhavesh - Portfolio</span>
+    </div>
+    <div class="title-bar-right">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-cog"></i>
+    </div>
+  </div>
+
+  <!-- Menu Bar -->
+  <div class="menu-bar">
+    <div class="menu-items">
+      <span class="menu-item">File</span>
+      <span class="menu-item">Edit</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Go</span>
+      <span class="menu-item">Run</span>
+      <span class="menu-item">Terminal</span>
+      <span class="menu-item">Help</span>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="explorer-title">
+          <i class="fas fa-folder-open"></i>
+          <span>EXPLORER</span>
+        </div>
+      </div>
+      
+      <div class="file-explorer">
+        <!-- Hierarchical Menu Structure -->
+        <div class="menu-structure">
+          <div *ngFor="let section of menuStructure" class="menu-section">
+            
+            <!-- Parent Menu Item -->
+            <div 
+              class="menu-parent"
+              [class.expanded]="section.expanded"
+              [class.active]="section.active"
+              (click)="onMenuItemClick(section)">
+              
+              <div class="menu-parent-content">
+                <i 
+                  class="fas fa-chevron-right expand-icon" 
+                  [class.expanded]="section.expanded"
+                  *ngIf="section.children && section.children.length > 0"></i>
+                <i [class]="section.icon" class="menu-icon"></i>
+                <span class="menu-text">{{ section.name }}</span>
+              </div>
+            </div>
+
+            <!-- Child Menu Items -->
+            <div 
+              class="menu-children" 
+              *ngIf="section.children && section.expanded">
+              <div 
+                *ngFor="let child of section.children"
+                class="menu-child"
+                [class.active]="child.active"
+                (click)="onMenuItemClick(child)">
+                <i [class]="child.icon" class="child-icon"></i>
+                <span class="child-text">{{ child.name }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <span class="social-text">find me on:</span>
+        <div class="social-icons">
+          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="github-username">
+          <i class="fab fa-github"></i>
+          <span>bhavesh-username</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-area">
+      <!-- Tab Bar -->
+      <div class="tab-bar">
+        <div 
+          *ngFor="let tab of tabs" 
+          class="tab"
+          [class.active]="tab.active"
+          (click)="onTabClick(tab)">
+          <span>{{ tab.name }}</span>
+          <i class="fas fa-times tab-close" (click)="closeTab(tab, $event)"></i>
+        </div>
+      </div>
+
+      <!-- Content Wrapper -->
+      <div class="content-wrapper">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <div class="status-left">
+      <span class="status-item">
+        <i class="fas fa-check-circle"></i>
+        Portfolio
+      </span>
+      <span class="status-item">
+        <i class="fas fa-exclamation-triangle"></i>
+        0
+      </span>
+    </div>
+    <div class="status-right">
+      <span class="status-item">Ln 1, Col 1</span>
+      <span class="status-item">Spaces: 2</span>
+      <span class="status-item">UTF-8</span>
+      <span class="status-item">TypeScript</span>
+    </div>
+  </div>
+</div>

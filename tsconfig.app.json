@@ -5,9 +5,9 @@
     "types": []
   },
   "files": [
-    "main.ts"
+    "src/main.ts"
   ],
   "include": [
-    "app/**/*.d.ts"
+    "src/**/*.d.ts"
   ]
 }

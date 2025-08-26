@@ -1,0 +1,711 @@
+<div class="personal-info-container fade-in">
+  <div class="info-content">
+    <!-- Bio Section -->
+    <div class="content-section" *ngIf="activeSection === 'bio'">
+      <div class="file-header">
+        <span class="file-name">bio.md</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="markdown-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getBioLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- Markdown Content -->
+        <div class="markdown-content">
+          
+          <!-- About Section -->
+          <div class="md-line">
+            <span class="md-subheader">## About Me</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          <div class="md-line">
+            <span class="md-text">I'm a **dedicated software developer** with a passion for creating</span>
+          </div>
+          <div class="md-line">
+            <span class="md-text">innovative solutions and building scalable applications.</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          <div class="md-line">
+            <span class="md-text">With expertise spanning *modern web technologies* and a strong foundation</span>
+          </div>
+          <div class="md-line">
+            <span class="md-text">in computer science principles, I enjoy tackling complex problems</span>
+          </div>
+          <div class="md-line">
+            <span class="md-text">and delivering high-quality software solutions.</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          
+          <!-- Quick Facts -->
+          <div class="md-line">
+            <span class="md-subheader">## Quick Facts</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          <div class="md-line">
+            <span class="md-list">- 🚀 **Current Role**: Full Stack Developer at TechCorp Solutions</span>
+          </div>
+          <div class="md-line">
+            <span class="md-list">- 🎓 **Education**: BTech in Computer Science (2019-2023)</span>
+          </div>
+          <div class="md-line">
+            <span class="md-list">- 💻 **Primary Stack**: Angular, Node.js, TypeScript, MongoDB</span>
+          </div>
+          <div class="md-line">
+            <span class="md-list">- ☁️ **Cloud**: AWS Certified Cloud Practitioner</span>
+          </div>
+          <div class="md-line">
+            <span class="md-list">- 🌱 **Currently Learning**: Machine Learning & AI</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          
+          <!-- Core Values -->
+          <div class="md-line">
+            <span class="md-subheader">## Core Values</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          <div class="md-line">
+            <span class="md-blockquote">> "Clean code is not written by following a set of rules.</span>
+          </div>
+          <div class="md-line">
+            <span class="md-blockquote">> You don't become a software craftsman by learning a list</span>
+          </div>
+          <div class="md-line">
+            <span class="md-blockquote">> of heuristics. Professionalism and craftsmanship come</span>
+          </div>
+          <div class="md-line">
+            <span class="md-blockquote">> from values that drive disciplines." - Robert C. Martin</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          
+          <!-- What Drives Me -->
+          <div class="md-line">
+            <span class="md-subheader">## What Drives Me</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          <div class="md-line">
+            <span class="md-text">I believe in **continuous learning** and staying updated with the</span>
+          </div>
+          <div class="md-line">
+            <span class="md-text">latest industry trends and best practices. Every project is an</span>
+          </div>
+          <div class="md-line">
+            <span class="md-text">opportunity to learn something new and push the boundaries of</span>
+          </div>
+          <div class="md-line">
+            <span class="md-text">what's possible with technology.</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          
+          <!-- Fun Facts -->
+          <div class="md-line">
+            <span class="md-subheader">## Fun Facts</span>
+          </div>
+          <div class="md-line md-empty"></div>
+          <div class="md-line">
+            <span class="md-code-block">```javascript</span>
+          </div>
+          <div class="md-line">
+            <span class="md-code">const funFacts = {{ '{' }}</span>
+          </div>
+          <div class="md-line">
+            <span class="md-code">  coffeePerDay: "4+ cups ☕",</span>
+          </div>
+          <div class="md-line">
+            <span class="md-code">  favoriteEditor: "VS Code (obviously! 😄)",</span>
+          </div>
+          <div class="md-line">
+            <span class="md-code">  debuggingStyle: "console.log() detective 🕵️",</span>
+          </div>
+          <div class="md-line">
+            <span class="md-code">  weekendActivity: "Building side projects 🛠️",</span>
+          </div>
+          <div class="md-line">
+            <span class="md-code">  motto: "Code, Learn, Repeat 🔄"</span>
+          </div>
+          <div class="md-line">
+            <span class="md-code">{{ '}' }};</span>
+          </div>
+          <div class="md-line">
+            <span class="md-code-block">```</span>
+          </div>
+          <div class="md-line md-empty"></div>
+
+          <!-- Footer -->
+          <div class="md-line">
+            <span class="md-divider">---</span>
+          </div>
+          <div class="md-line">
+            <span class="md-italic">*"The best way to predict the future is to create it."* - Peter Drucker</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interests Section -->
+    <div class="content-section" *ngIf="activeSection === 'interests'">
+      <div class="file-header">
+        <span class="file-name">interests.json</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="json-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getInterestsLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- JSON Content -->
+        <div class="json-content">
+          <div class="json-line">
+            <span class="json-bracket">{{ '{' }}</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">  </span><span class="json-property">"personalInterests"</span><span class="json-colon">:</span> <span class="json-bracket">[</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"💻 Full Stack Development - Building end-to-end applications"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"🌐 Modern Web Technologies - React, Angular, Vue.js"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"📱 Mobile Development - React Native, Flutter"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"☁️ Cloud Computing - AWS, Azure, Google Cloud"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"🤖 AI & Machine Learning - TensorFlow, PyTorch"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"🔒 Cybersecurity - Ethical hacking, Security best practices"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"📊 Data Science - Analytics, Visualization, Big Data"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"🎯 Problem Solving - Algorithm design, Code optimization"</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">  </span><span class="json-bracket">]</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line json-empty"></div>
+          <div class="json-line">
+            <span class="json-indent">  </span><span class="json-property">"technicalPassions"</span><span class="json-colon">:</span> <span class="json-bracket">{{ '{' }}</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-property">"currentFocus"</span><span class="json-colon">:</span> <span class="json-string">"TypeScript & Angular Advanced Patterns"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-property">"exploring"</span><span class="json-colon">:</span> <span class="json-string">"Microservices Architecture"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-property">"nextGoal"</span><span class="json-colon">:</span> <span class="json-string">"DevOps & Container Orchestration"</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">  </span><span class="json-bracket">{{ '}' }}</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line json-empty"></div>
+          <div class="json-line">
+            <span class="json-indent">  </span><span class="json-property">"personalHobbies"</span><span class="json-colon">:</span> <span class="json-bracket">[</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"🎮 Gaming - Strategy games, Indie games"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"📚 Reading - Tech blogs, Programming books"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"🏃‍♂️ Fitness - Running, Gym workouts"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"🎵 Music - Electronic, Lo-fi while coding"</span><span class="json-comma">,</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">    </span><span class="json-string">"✈️ Travel - Exploring new cultures and cuisines"</span>
+          </div>
+          <div class="json-line">
+            <span class="json-indent">  </span><span class="json-bracket">]</span>
+          </div>
+          <div class="json-line">
+            <span class="json-bracket">{{ '}' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="content-section" *ngIf="activeSection === 'education'">
+      <div class="file-header">
+        <span class="file-name">education.js</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="js-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getEducationLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- JavaScript Content -->
+        <div class="js-content">
+          <div class="js-line">
+            <span class="js-comment">/**</span>
+          </div>
+          <div class="js-line">
+            <span class="js-comment"> * Educational Background & Academic Journey</span>
+          </div>
+          <div class="js-line">
+            <span class="js-comment"> * Comprehensive overview of formal education and certifications</span>
+          </div>
+          <div class="js-line">
+            <span class="js-comment"> */</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-keyword">const</span> <span class="js-variable">educationalBackground</span> <span class="js-operator">=</span> <span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">  </span><span class="js-property">primaryEducation</span><span class="js-colon">:</span> <span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">degree</span><span class="js-colon">:</span> <span class="js-string">"Bachelor of Technology"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">specialization</span><span class="js-colon">:</span> <span class="js-string">"Computer Science & Engineering"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">institution</span><span class="js-colon">:</span> <span class="js-string">"University of Technology"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">duration</span><span class="js-colon">:</span> <span class="js-string">"2019 - 2023"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">grade</span><span class="js-colon">:</span> <span class="js-string">"8.5/10 CGPA"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">keySubjects</span><span class="js-colon">:</span> <span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">        </span><span class="js-string">"Data Structures & Algorithms"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">        </span><span class="js-string">"Software Engineering"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">        </span><span class="js-string">"Database Management Systems"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">        </span><span class="js-string">"Web Technologies"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">        </span><span class="js-string">"Computer Networks"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">        </span><span class="js-string">"Operating Systems"</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">finalProject</span><span class="js-colon">:</span> <span class="js-string">"E-commerce Platform with MEAN Stack"</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-bracket">{{ '}' }}</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">  </span><span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-indent">  </span><span class="js-property">certifications</span><span class="js-colon">:</span> <span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">name</span><span class="js-colon">:</span> <span class="js-string">"AWS Certified Cloud Practitioner"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">issuer</span><span class="js-colon">:</span> <span class="js-string">"Amazon Web Services"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">year</span><span class="js-colon">:</span> <span class="js-number">2023</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">credentialId</span><span class="js-colon">:</span> <span class="js-string">"AWS-CCP-2023-001"</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-bracket">{{ '}' }}</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">name</span><span class="js-colon">:</span> <span class="js-string">"Angular - The Complete Guide"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">issuer</span><span class="js-colon">:</span> <span class="js-string">"Udemy"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">year</span><span class="js-colon">:</span> <span class="js-number">2022</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">      </span><span class="js-property">hours</span><span class="js-colon">:</span> <span class="js-number">40</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-bracket">{{ '}' }}</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">  </span><span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-indent">  </span><span class="js-property">achievements</span><span class="js-colon">:</span> <span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-string">"🏆 Dean's List for Academic Excellence (2021, 2022)"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-string">"🥇 First Place - University Hackathon 2022"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-string">"📚 Technical Paper Published in IEEE Conference"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">    </span><span class="js-string">"👨‍🏫 Teaching Assistant for Web Development Course"</span>
+          </div>
+          <div class="js-line">
+            <span class="js-indent">  </span><span class="js-bracket">]</span>
+          </div>
+          <div class="js-line">
+            <span class="js-bracket">{{ '}' }}</span><span class="js-semicolon">;</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-comment">// Export for portfolio display</span>
+          </div>
+          <div class="js-line">
+            <span class="js-keyword">export</span> <span class="js-keyword">default</span> <span class="js-variable">educationalBackground</span><span class="js-semicolon">;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hobbies Section -->
+    <div class="content-section" *ngIf="activeSection === 'hobbies'">
+      <div class="file-header">
+        <span class="file-name">hobbies.txt</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="text-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getHobbiesLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- Text Content -->
+        <div class="text-content">
+          <div class="text-line">
+            <span class="text-header">Personal Hobbies & Interests</span>
+          </div>
+          <div class="text-line">
+            <span class="text-divider">================================</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-category">[CREATIVE & TECHNICAL]</span>
+          </div>
+          <div class="text-line">
+            <span class="text-item">🎨 UI/UX Design</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Creating beautiful and intuitive user interfaces</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Tools: Figma, Adobe XD, Sketch</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-item">💻 Side Projects</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Building personal projects and experimenting with new tech</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Current: Building a task management app with AI features</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-item">📝 Technical Writing</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Writing blog posts and tutorials about web development</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Published on: Medium, Dev.to, Personal blog</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-category">[ENTERTAINMENT & LEISURE]</span>
+          </div>
+          <div class="text-line">
+            <span class="text-item">🎮 Gaming</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Strategy games, RPGs, and indie games</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Favorites: Civilization VI, The Witcher 3, Hades</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-item">📚 Reading</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Technical books, sci-fi novels, and productivity guides</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Recent reads: "Clean Architecture", "Atomic Habits"</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-item">🎵 Music</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Electronic, Lo-fi, and instrumental music while coding</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Playlists: Focus music, Synthwave, Ambient</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-category">[PHYSICAL & OUTDOOR]</span>
+          </div>
+          <div class="text-line">
+            <span class="text-item">🏃‍♂️ Fitness</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Regular gym workouts and morning runs</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Goal: Maintaining work-life balance and staying healthy</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-item">✈️ Travel</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Exploring new places, cultures, and cuisines</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Recent trips: Goa, Kerala, planning: Japan, Europe</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-item">📷 Photography</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Landscape and street photography during travels</span>
+          </div>
+          <div class="text-line">
+            <span class="text-description">   Equipment: Canon EOS R6, editing in Lightroom</span>
+          </div>
+          <div class="text-line text-empty"></div>
+          
+          <div class="text-line">
+            <span class="text-divider">================================</span>
+          </div>
+          <div class="text-line">
+            <span class="text-footer">Life is about balance - code, create, explore, repeat! 🚀</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Languages Section -->
+    <div class="content-section" *ngIf="activeSection === 'languages'">
+      <div class="file-header">
+        <span class="file-name">languages.yml</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="yaml-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getLanguagesLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- YAML Content -->
+        <div class="yaml-content">
+          <div class="yaml-line">
+            <span class="yaml-comment"># Language Proficiency & Communication Skills</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-comment"># Levels: Native, Fluent, Conversational, Basic</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-key">spoken_languages</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">english</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">proficiency</span><span class="yaml-colon">:</span> <span class="yaml-string">"Fluent"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">level</span><span class="yaml-colon">:</span> <span class="yaml-number">95</span><span class="yaml-comment"> # Percentage</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">usage</span><span class="yaml-colon">:</span> <span class="yaml-string">"Professional & Technical Communication"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">certifications</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">      </span><span class="yaml-list">-</span> <span class="yaml-string">"IELTS: 8.0/9.0"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">      </span><span class="yaml-list">-</span> <span class="yaml-string">"Business English Certificate"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">hindi</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">proficiency</span><span class="yaml-colon">:</span> <span class="yaml-string">"Native"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">level</span><span class="yaml-colon">:</span> <span class="yaml-number">100</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">usage</span><span class="yaml-colon">:</span> <span class="yaml-string">"Daily communication, family, friends"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">dialects</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">      </span><span class="yaml-list">-</span> <span class="yaml-string">"Standard Hindi"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">      </span><span class="yaml-list">-</span> <span class="yaml-string">"Mumbai Hindi"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">marathi</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">proficiency</span><span class="yaml-colon">:</span> <span class="yaml-string">"Conversational"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">level</span><span class="yaml-colon">:</span> <span class="yaml-number">75</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">usage</span><span class="yaml-colon">:</span> <span class="yaml-string">"Local communication in Maharashtra"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">spanish</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">proficiency</span><span class="yaml-colon">:</span> <span class="yaml-string">"Basic"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">level</span><span class="yaml-colon">:</span> <span class="yaml-number">40</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">usage</span><span class="yaml-colon">:</span> <span class="yaml-string">"Learning for travel and culture"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-key">learning_platform</span><span class="yaml-colon">:</span> <span class="yaml-string">"Duolingo, Babbel"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-key">programming_languages</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-comment">  # Technical communication in various programming languages</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">primary</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-list">-</span> <span class="yaml-string">"JavaScript/TypeScript"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-list">-</span> <span class="yaml-string">"Python"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-list">-</span> <span class="yaml-string">"Java"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">secondary</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-list">-</span> <span class="yaml-string">"C++"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-list">-</span> <span class="yaml-string">"Go"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">    </span><span class="yaml-list">-</span> <span class="yaml-string">"Rust"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-key">communication_skills</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">presentation</span><span class="yaml-colon">:</span> <span class="yaml-string">"Excellent"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">technical_writing</span><span class="yaml-colon">:</span> <span class="yaml-string">"Advanced"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">team_collaboration</span><span class="yaml-colon">:</span> <span class="yaml-string">"Excellent"</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-indent">  </span><span class="yaml-key">client_interaction</span><span class="yaml-colon">:</span> <span class="yaml-string">"Professional"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

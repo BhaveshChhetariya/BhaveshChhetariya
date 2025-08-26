@@ -1,0 +1,97 @@
+<div class="projects-container fade-in">
+  <div class="projects-sidebar">
+    <div class="sidebar-header">
+      <i class="fas fa-folder-open"></i>
+      <span>Projects</span>
+    </div>
+    
+    <div class="project-categories">
+      <div 
+        *ngFor="let category of categories"
+        class="category-item"
+        [class.active]="activeCategory === category.key"
+        (click)="setActiveCategory(category.key)">
+        <i [class]="category.icon"></i>
+        <span>{{ category.name }}</span>
+        <span class="count">{{ getProjectCount(category.key) }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-content">
+    <div class="content-header">
+      <h2>// My Projects</h2>
+      <p>Here are some of the projects I've worked on. Each one represents a unique challenge and learning experience.</p>
+    </div>
+
+    <div class="projects-grid">
+      <div 
+        *ngFor="let project of filteredProjects" 
+        class="project-card">
+        
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="project-overlay">
+            <div class="project-actions">
+              <button 
+                *ngIf="project.demoUrl"
+                class="action-btn demo-btn"
+                (click)="openDemo(project.demoUrl)">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Live Demo</span>
+              </button>
+              <button 
+                *ngIf="project.githubUrl"
+                class="action-btn github-btn"
+                (click)="openGithub(project.githubUrl)">
+                <i class="fab fa-github"></i>
+                <span>Source Code</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-info">
+          <div class="project-header">
+            <h3>{{ project.title }}</h3>
+            <div class="project-category">
+              <i class="fas fa-folder"></i>
+              <span>{{ getCategoryName(project.category) }}</span>
+            </div>
+          </div>
+          
+          <p class="project-description">{{ project.description }}</p>
+          
+          <div class="project-tech">
+            <span 
+              *ngFor="let tech of project.technologies" 
+              class="tech-tag">
+              {{ tech }}
+            </span>
+          </div>
+          
+          <div class="project-footer">
+            <button 
+              *ngIf="project.demoUrl"
+              class="view-project demo"
+              (click)="openDemo(project.demoUrl)">
+              view-demo
+            </button>
+            <button 
+              *ngIf="project.githubUrl"
+              class="view-project github"
+              (click)="openGithub(project.githubUrl)">
+              view-code
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="filteredProjects.length === 0">
+      <i class="fas fa-folder-open"></i>
+      <h3>No projects found</h3>
+      <p>No projects match the selected category.</p>
+    </div>
+  </div>
+</div>

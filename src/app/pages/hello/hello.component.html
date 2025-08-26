@@ -1,0 +1,76 @@
+<div class="hello-container fade-in">
+  <div class="hello-left">
+    <div class="profile-section">
+      <div class="profile-image">
+        <img src="https://via.placeholder.com/200x200/4A90E2/FFFFFF?text=Your+Photo" alt="Your Name">
+      </div>
+      <div class="intro-text">
+        <h1>Hi all, I am</h1>
+        <h2 class="name">Bhavesh</h2>
+        <p class="role">> Full Stack Developer</p>
+      </div>
+    </div>
+    
+    <div class="code-snippet">
+      <div class="code-comment">// Contact for collaboration</div>
+      <div class="code-line">
+        <span class="keyword">const  </span> 
+        <span class="variable">githubLink</span> 
+        <span class="operator">=</span> 
+        <span 
+          class="string" 
+          [class.clickable]="gameCompleted"
+          (click)="openGithub()">"https://github.com/BhaveshChhetariya"</span>
+        <span class="semicolon">;</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hello-right">
+    <div class="game-container">
+      <div class="game-header">
+        <div class="game-controls">
+          <span class="control-dot red"></span>
+          <span class="control-dot yellow"></span>
+          <span class="control-dot green"></span>
+        </div>
+      </div>
+      <div class="game-content">
+        <div class="game-instructions">
+          <p>// use your keyboard</p>
+          <p>// arrows to play</p>
+          <div class="arrow-keys">
+            <div class="arrow-row">
+              <div class="arrow-key">↑</div>
+            </div>
+            <div class="arrow-row">
+              <div class="arrow-key">←</div>
+              <div class="arrow-key">↓</div>
+              <div class="arrow-key">→</div>
+            </div>
+          </div>
+          <p class="food-left">// food left</p>
+          <div class="food-dots">
+            <span 
+              *ngFor="let dot of getFoodDots(); let i = index" 
+              class="dot"
+              [class.eaten]="i >= foodLeft">
+            </span>
+          </div>
+        </div>
+        <div class="snake-game">
+          <canvas #snakeCanvas width="300" height="200"></canvas>
+        </div>
+        <div class="game-buttons">
+          <button 
+            class="btn-primary" 
+            (click)="startGame()"
+            [disabled]="gameStarted && game.gameRunning">
+            {{ gameStarted && game.gameRunning ? 'playing...' : 'start-game' }}
+          </button>
+          <button class="btn-secondary" (click)="skipGame()">skip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
