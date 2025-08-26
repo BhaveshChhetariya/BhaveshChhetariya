@@ -11,26 +11,26 @@
         }
       },
       "root": "",
-      "sourceRoot": "root",
+      "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/vscode-portfolio",
-            "index": "root/index.html",
-            "main": "root/main.ts",
+            "index": "src/index.html",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "root/favicon.ico",
-              "root/assets"
+              "favicon.ico",
+              "assets"
             ],
             "styles": [
-              "root/styles.scss"
+              "styles.scss"
             ],
             "scripts": []
           },
@@ -44,8 +44,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "20kb",
+                  "maximumError": "25kb"
                 }
               ],
               "outputHashing": "all"

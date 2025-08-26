@@ -1045,13 +1045,13 @@
       color: var(--vscode-text);
       
       // Bold text
-      strong, **strong** {
+      strong {
         color: #ffd700;
         font-weight: 600;
       }
       
       // Italic text
-      em, *em* {
+      em {
         color: #98c379;
         font-style: italic;
       }
