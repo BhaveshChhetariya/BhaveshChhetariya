@@ -1,0 +1,163 @@
+<div class="personal-info-container fade-in">
+  <div class="info-content">
+    <div class="content-section">
+      <div class="file-header">
+        <span class="file-name">bio.md</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="js-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getBioLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- Content -->
+        <div class="js-content">
+          
+          <!-- About Section -->
+          <div class="js-line">
+            <span class="js-comment">##&nbsp;About&nbsp;Me</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-string">Versatile&nbsp;Full&nbsp;Stack&nbsp;Developer&nbsp;with&nbsp;a&nbsp;strong&nbsp;foundation&nbsp;in</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">Angular,&nbsp;.NET,&nbsp;and&nbsp;Flutter.&nbsp;Proven&nbsp;experience&nbsp;in&nbsp;developing</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">and&nbsp;deploying&nbsp;robust&nbsp;web,&nbsp;mobile,&nbsp;and&nbsp;backend&nbsp;applications</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">for&nbsp;the&nbsp;MVAS&nbsp;industry.</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-string">Skilled&nbsp;in&nbsp;designing&nbsp;and&nbsp;implementing&nbsp;user-friendly&nbsp;interfaces,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">integrating&nbsp;with&nbsp;various&nbsp;APIs,&nbsp;and&nbsp;optimizing&nbsp;application</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">performance.&nbsp;Passionate&nbsp;about&nbsp;leveraging&nbsp;cutting-edge</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">technologies&nbsp;to&nbsp;deliver&nbsp;innovative&nbsp;solutions.</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <!-- Quick Facts -->
+          <div class="js-line">
+            <span class="js-comment">##&nbsp;Quick&nbsp;Facts</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-keyword">const</span>&nbsp;<span class="js-variable">quickFacts</span>&nbsp;<span class="js-operator">=</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">currentRole</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Full&nbsp;Stack&nbsp;Developer&nbsp;at&nbsp;Mobibox&nbsp;Softech"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">education</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"MCA&nbsp;from&nbsp;Chandigarh&nbsp;University&nbsp;(2020-2022)"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">primaryStack</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span><span class="js-string">"Angular"</span><span class="js-comma">,</span>&nbsp;<span class="js-string">".NET"</span><span class="js-comma">,</span>&nbsp;<span class="js-string">"Flutter"</span><span class="js-comma">,</span>&nbsp;<span class="js-string">"AWS"</span><span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">cloudServices</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span><span class="js-string">"DynamoDB"</span><span class="js-comma">,</span>&nbsp;<span class="js-string">"Redshift"</span><span class="js-comma">,</span>&nbsp;<span class="js-string">"MySQL"</span><span class="js-comma">,</span>&nbsp;<span class="js-string">"OpenSearch"</span><span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">experience</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"5+&nbsp;years&nbsp;in&nbsp;Full&nbsp;Stack&nbsp;Development"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">location</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Vapi,&nbsp;Gujarat,&nbsp;India"</span>
+          </div>
+          <div class="js-line">
+            <span class="js-bracket">{{ '}' }};</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <!-- Core Expertise -->
+          <div class="js-line">
+            <span class="js-comment">##&nbsp;Core&nbsp;Expertise</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-keyword">const</span>&nbsp;<span class="js-variable">expertise</span>&nbsp;<span class="js-operator">=</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">frontend</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">angular</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Responsive&nbsp;web&nbsp;applications"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">flutter</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Cross-platform&nbsp;mobile&nbsp;development"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">backend</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">dotnet</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Robust&nbsp;backend&nbsp;services"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">apis</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Integration&nbsp;and&nbsp;database&nbsp;management"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">cloud</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">aws</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"DynamoDB,&nbsp;Redshift,&nbsp;MySQL,&nbsp;OpenSearch"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">deployment</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Production&nbsp;deployment&nbsp;and&nbsp;monitoring"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span>
+          </div>
+          <div class="js-line">
+            <span class="js-bracket">{{ '}' }};</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <!-- Professional Journey -->
+          <div class="js-line">
+            <span class="js-comment">##&nbsp;Professional&nbsp;Journey</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-string">From&nbsp;Mobile&nbsp;App&nbsp;Developer&nbsp;to&nbsp;Full&nbsp;Stack&nbsp;Developer,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">I've&nbsp;grown&nbsp;through&nbsp;diverse&nbsp;roles&nbsp;at&nbsp;Mobibox&nbsp;Softech,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">gaining&nbsp;expertise&nbsp;in&nbsp;MVAS&nbsp;industry&nbsp;solutions,</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">technical&nbsp;integrations,&nbsp;and&nbsp;performance&nbsp;optimization.</span>
+          </div>
+          <div class="js-line js-empty"></div>
+
+          <!-- Footer -->
+          <div class="js-line">
+            <span class="js-comment">---</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">*"Proficient&nbsp;in&nbsp;problem-solving,&nbsp;teamwork,&nbsp;and&nbsp;effective&nbsp;communication."*</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

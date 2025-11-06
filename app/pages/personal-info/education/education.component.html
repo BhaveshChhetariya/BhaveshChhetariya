@@ -1,0 +1,163 @@
+<div class="personal-info-container fade-in">
+  <div class="info-content">
+    <div class="content-section">
+      <div class="file-header">
+        <span class="file-name">education.js</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="js-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getEducationLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- JavaScript Content -->
+        <div class="js-content">
+          <div class="js-line">
+            <span class="js-comment">/**</span>
+          </div>
+          <div class="js-line">
+            <span class="js-comment">&nbsp;*&nbsp;Educational&nbsp;Background&nbsp;-&nbsp;Bhavesh&nbsp;Chhetariya</span>
+          </div>
+          <div class="js-line">
+            <span class="js-comment">&nbsp;*&nbsp;Comprehensive&nbsp;overview&nbsp;of&nbsp;formal&nbsp;education&nbsp;and&nbsp;professional&nbsp;development</span>
+          </div>
+          <div class="js-line">
+            <span class="js-comment">&nbsp;*/</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-keyword">const</span>&nbsp;<span class="js-variable">educationalBackground</span>&nbsp;<span class="js-operator">=</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">postGraduate</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">degree</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Master&nbsp;of&nbsp;Computer&nbsp;Applications"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">abbreviation</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"MCA"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">institution</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Chandigarh&nbsp;University"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">duration</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"July&nbsp;2020&nbsp;-&nbsp;November&nbsp;2022"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">focus</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Advanced&nbsp;Computer&nbsp;Applications&nbsp;&amp;&nbsp;Software&nbsp;Development"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">keyAreas</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Advanced&nbsp;Programming&nbsp;Concepts"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Software&nbsp;Engineering&nbsp;&amp;&nbsp;Architecture"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Database&nbsp;Management&nbsp;Systems"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Web&nbsp;Technologies&nbsp;&amp;&nbsp;Frameworks"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Mobile&nbsp;Application&nbsp;Development"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">]</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">undergraduate</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">degree</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Bachelor's&nbsp;Degree"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">specialization</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Computer&nbsp;Science"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">institution</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Veer&nbsp;Narmad&nbsp;South&nbsp;Gujarat&nbsp;University,&nbsp;Surat"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">duration</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"2016&nbsp;-&nbsp;2020"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">foundationSubjects</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Programming&nbsp;Fundamentals"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Data&nbsp;Structures&nbsp;&amp;&nbsp;Algorithms"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Computer&nbsp;Networks"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Operating&nbsp;Systems"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Software&nbsp;Development&nbsp;Life&nbsp;Cycle"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">]</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">professionalDevelopment</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"5+&nbsp;years&nbsp;hands-on&nbsp;experience&nbsp;in&nbsp;Full&nbsp;Stack&nbsp;Development"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Specialized&nbsp;training&nbsp;in&nbsp;MVAS&nbsp;industry&nbsp;solutions"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"AWS&nbsp;cloud&nbsp;services&nbsp;certification&nbsp;and&nbsp;implementation"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"Advanced&nbsp;Angular&nbsp;and&nbsp;.NET&nbsp;framework&nbsp;expertise"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">]</span>
+          </div>
+          <div class="js-line">
+            <span class="js-bracket">{{'}'}};</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-comment">//&nbsp;Academic&nbsp;foundation&nbsp;supporting&nbsp;professional&nbsp;excellence</span>
+          </div>
+          <div class="js-line">
+            <span class="js-keyword">export</span>&nbsp;<span class="js-keyword">default</span>&nbsp;<span class="js-variable">educationalBackground</span><span class="js-semicolon">;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,33 @@ export const routes: Routes = [
   },
   {
     path: 'personal-info',
-    loadComponent: () => import('./pages/personal-info/personal-info.component').then(m => m.PersonalInfoComponent)
+    children: [
+      {
+        path: '',
+        redirectTo: 'bio',
+        pathMatch: 'full'
+      },
+      {
+        path: 'bio',
+        loadComponent: () => import('./pages/personal-info/bio/bio.component').then(m => m.BioComponent)
+      },
+      {
+        path: 'interests',
+        loadComponent: () => import('./pages/personal-info/interests/interests.component').then(m => m.InterestsComponent)
+      },
+      {
+        path: 'education',
+        loadComponent: () => import('./pages/personal-info/education/education.component').then(m => m.EducationComponent)
+      },
+      {
+        path: 'hobbies',
+        loadComponent: () => import('./pages/personal-info/hobbies/hobbies.component').then(m => m.HobbiesComponent)
+      },
+      {
+        path: 'languages',
+        loadComponent: () => import('./pages/personal-info/languages/languages.component').then(m => m.LanguagesComponent)
+      }
+    ]
   },
   {
     path: 'professional-info',

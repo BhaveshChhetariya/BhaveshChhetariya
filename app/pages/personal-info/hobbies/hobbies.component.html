@@ -1,0 +1,146 @@
+<div class="personal-info-container fade-in">
+  <div class="info-content">
+    <div class="content-section">
+      <div class="file-header">
+        <span class="file-name">hobbies.txt</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="js-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getHobbiesLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- Content -->
+        <div class="js-content">
+          <div class="js-line">
+            <span class="js-comment">Personal&nbsp;Interests&nbsp;&amp;&nbsp;Professional&nbsp;Development</span>
+          </div>
+          <div class="js-line">
+            <span class="js-comment">================================================</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-comment">[TECHNICAL&nbsp;EXPLORATION]</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">🔬&nbsp;Technology&nbsp;Research</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Exploring&nbsp;cutting-edge&nbsp;technologies&nbsp;and&nbsp;frameworks</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Focus:&nbsp;Latest&nbsp;Angular&nbsp;features,&nbsp;.NET&nbsp;Core&nbsp;updates,&nbsp;Flutter&nbsp;advances</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-string">☁️&nbsp;Cloud&nbsp;Architecture</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Deep&nbsp;diving&nbsp;into&nbsp;AWS&nbsp;services&nbsp;and&nbsp;cloud-native&nbsp;solutions</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Current:&nbsp;Advanced&nbsp;DynamoDB&nbsp;optimization&nbsp;and&nbsp;OpenSearch&nbsp;analytics</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-string">📱&nbsp;Mobile&nbsp;Innovation</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Experimenting&nbsp;with&nbsp;Flutter's&nbsp;latest&nbsp;features&nbsp;and&nbsp;performance</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Interest:&nbsp;Cross-platform&nbsp;optimization&nbsp;and&nbsp;state&nbsp;management</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-comment">[PROFESSIONAL&nbsp;DEVELOPMENT]</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">🎯&nbsp;Problem&nbsp;Solving</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Tackling&nbsp;complex&nbsp;technical&nbsp;challenges&nbsp;in&nbsp;MVAS&nbsp;industry</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Specialty:&nbsp;Performance&nbsp;optimization&nbsp;and&nbsp;fraud&nbsp;prevention</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-string">🤝&nbsp;Team&nbsp;Collaboration</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Leading&nbsp;technical&nbsp;integration&nbsp;projects</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Focus:&nbsp;Effective&nbsp;communication&nbsp;and&nbsp;knowledge&nbsp;sharing</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-string">📊&nbsp;Analytics&nbsp;&amp;&nbsp;Monitoring</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Creating&nbsp;automated&nbsp;monitoring&nbsp;systems&nbsp;and&nbsp;alerts</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Tools:&nbsp;OpenSearch,&nbsp;Firebase&nbsp;Analytics,&nbsp;Custom&nbsp;dashboards</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-comment">[CONTINUOUS&nbsp;LEARNING]</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">📚&nbsp;Technical&nbsp;Documentation</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Reading&nbsp;latest&nbsp;tech&nbsp;blogs,&nbsp;documentation,&nbsp;and&nbsp;best&nbsp;practices</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Sources:&nbsp;Angular&nbsp;docs,&nbsp;AWS&nbsp;whitepapers,&nbsp;Flutter&nbsp;community</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-string">🌐&nbsp;Industry&nbsp;Networking</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Connecting&nbsp;with&nbsp;fellow&nbsp;developers&nbsp;and&nbsp;tech&nbsp;professionals</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Platform:&nbsp;LinkedIn&nbsp;professional&nbsp;network</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-string">🚀&nbsp;Innovation&nbsp;Projects</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Working&nbsp;on&nbsp;white-label&nbsp;solutions&nbsp;for&nbsp;international&nbsp;markets</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">&nbsp;&nbsp;&nbsp;Experience:&nbsp;India&nbsp;and&nbsp;Lebanon&nbsp;market&nbsp;adaptations</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          
+          <div class="js-line">
+            <span class="js-comment">================================================</span>
+          </div>
+          <div class="js-line">
+            <span class="js-string">Passionate&nbsp;about&nbsp;leveraging&nbsp;technology&nbsp;for&nbsp;innovative&nbsp;solutions!&nbsp;🚀</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

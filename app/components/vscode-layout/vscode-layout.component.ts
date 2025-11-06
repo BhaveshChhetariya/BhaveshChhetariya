@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
+/** Interface for tab representation in the layout */
 interface Tab {
   name: string;
   route: string;
   active: boolean;
 }
 
+/** Interface for menu item structure with optional children */
 interface MenuItem {
   name: string;
   route?: string;
@@ -18,6 +20,11 @@ interface MenuItem {
   expanded?: boolean;
 }
 
+/**
+ * VSCode Layout Component
+ * Provides the main layout structure mimicking VSCode interface
+ * Handles navigation, tabs, and menu structure
+ */
 @Component({
   selector: 'app-vscode-layout',
   standalone: true,
@@ -26,8 +33,10 @@ interface MenuItem {
   styleUrls: ['./vscode-layout.component.scss']
 })
 export class VscodeLayoutComponent implements OnInit {
+  /** Array of open tabs */
   tabs: Tab[] = [];
   
+  /** Menu structure for the file explorer */
   menuStructure: MenuItem[] = [
     {
       name: 'hello.js',
@@ -41,11 +50,11 @@ export class VscodeLayoutComponent implements OnInit {
       active: false,
       expanded: false,
       children: [
-        { name: '_bio', route: '/personal-info?section=bio', icon: 'fas fa-file-alt', active: false },
-        { name: '_interests', route: '/personal-info?section=interests', icon: 'fas fa-heart', active: false },
-        { name: '_education', route: '/personal-info?section=education', icon: 'fas fa-graduation-cap', active: false },
-        { name: '_hobbies', route: '/personal-info?section=hobbies', icon: 'fas fa-gamepad', active: false },
-        { name: '_languages', route: '/personal-info?section=languages', icon: 'fas fa-globe', active: false }
+        { name: '_bio', route: '/personal-info/bio', icon: 'fas fa-file-alt', active: false },
+        { name: '_interests', route: '/personal-info/interests', icon: 'fas fa-heart', active: false },
+        { name: '_education', route: '/personal-info/education', icon: 'fas fa-graduation-cap', active: false },
+        { name: '_hobbies', route: '/personal-info/hobbies', icon: 'fas fa-gamepad', active: false },
+        { name: '_languages', route: '/personal-info/languages', icon: 'fas fa-globe', active: false }
       ]
     },
     {

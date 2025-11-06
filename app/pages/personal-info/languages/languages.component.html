@@ -1,0 +1,150 @@
+<div class="personal-info-container fade-in">
+  <div class="info-content">
+    <div class="content-section">
+      <div class="file-header">
+        <span class="file-name">languages.yml</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="yaml-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getLanguagesLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- YAML Content -->
+        <div class="yaml-content">
+          <div class="yaml-line">
+            <span class="yaml-comment">#&nbsp;Language&nbsp;Proficiency&nbsp;-&nbsp;Bhavesh&nbsp;Chhetariya</span>
+          </div>
+          <div class="yaml-line">
+            <span class="yaml-comment">#&nbsp;Professional&nbsp;communication&nbsp;and&nbsp;technical&nbsp;expertise</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-key">spoken_languages</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">english</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">proficiency</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Professional"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">level</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-number">90</span><span class="yaml-comment">&nbsp;#&nbsp;Professional&nbsp;working&nbsp;proficiency</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">usage</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Technical&nbsp;documentation,&nbsp;client&nbsp;communication,&nbsp;code&nbsp;reviews"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">context</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Daily&nbsp;work&nbsp;communication&nbsp;at&nbsp;Mobibox&nbsp;Softech"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">hindi</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">proficiency</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Native"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">level</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-number">100</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">usage</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Personal&nbsp;communication,&nbsp;family,&nbsp;local&nbsp;team&nbsp;interactions"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">region</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Gujarat,&nbsp;India"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">gujarati</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">proficiency</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Native"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">level</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-number">100</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">usage</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Local&nbsp;community,&nbsp;regional&nbsp;business&nbsp;communication"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">location</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Vapi,&nbsp;Gujarat"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-key">programming_languages</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-comment">#&nbsp;Technical&nbsp;expertise&nbsp;and&nbsp;proficiency&nbsp;levels</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">expert_level</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-list">-</span>&nbsp;<span class="yaml-string">"JavaScript&nbsp;-&nbsp;5+&nbsp;years,&nbsp;Angular&nbsp;framework&nbsp;specialist"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-list">-</span>&nbsp;<span class="yaml-string">"C#&nbsp;-&nbsp;.NET&nbsp;backend&nbsp;development,&nbsp;API&nbsp;creation"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-list">-</span>&nbsp;<span class="yaml-string">"Dart&nbsp;-&nbsp;Flutter&nbsp;mobile&nbsp;app&nbsp;development"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">proficient</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-list">-</span>&nbsp;<span class="yaml-string">"Java&nbsp;-&nbsp;Android&nbsp;development,&nbsp;employee&nbsp;management&nbsp;systems"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-list">-</span>&nbsp;<span class="yaml-string">"SQL&nbsp;-&nbsp;Database&nbsp;management,&nbsp;MySQL,&nbsp;DynamoDB"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-list">-</span>&nbsp;<span class="yaml-string">"TypeScript&nbsp;-&nbsp;Type-safe&nbsp;JavaScript&nbsp;development"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-key">technical_communication</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">documentation</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Advanced&nbsp;-&nbsp;API&nbsp;docs,&nbsp;technical&nbsp;specifications"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">code_review</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Expert&nbsp;-&nbsp;Code&nbsp;quality&nbsp;and&nbsp;best&nbsp;practices"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">client_interaction</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Professional&nbsp;-&nbsp;Third-party&nbsp;integrations"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">team_collaboration</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Expert&nbsp;-&nbsp;Cross-functional&nbsp;team&nbsp;leadership"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">problem_solving</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Advanced&nbsp;-&nbsp;Complex&nbsp;technical&nbsp;challenges"</span>
+          </div>
+          <div class="yaml-line yaml-empty"></div>
+          
+          <div class="yaml-line">
+            <span class="yaml-key">industry_expertise</span><span class="yaml-colon">:</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">domain</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"MVAS&nbsp;(Mobile&nbsp;Value&nbsp;Added&nbsp;Services)"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">experience</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"5+&nbsp;years&nbsp;in&nbsp;telecommunications&nbsp;and&nbsp;mobile&nbsp;services"</span>
+          </div>
+          <div class="yaml-line">
+            &nbsp;&nbsp;<span class="yaml-key">specialization</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">"Integration&nbsp;management&nbsp;and&nbsp;performance&nbsp;optimization"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

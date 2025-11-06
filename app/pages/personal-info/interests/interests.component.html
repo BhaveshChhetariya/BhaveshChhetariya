@@ -1,0 +1,127 @@
+<div class="personal-info-container fade-in">
+  <div class="info-content">
+    <div class="content-section">
+      <div class="file-header">
+        <span class="file-name">interests.ts</span>
+        <div class="file-actions">
+          <i class="fas fa-copy" title="Copy"></i>
+          <i class="fas fa-download" title="Download"></i>
+        </div>
+      </div>
+      
+      <div class="js-editor">
+        <!-- Line Numbers -->
+        <div class="line-numbers">
+          <span *ngFor="let line of getInterestsLineNumbers(); let i = index">{{ i + 1 }}</span>
+        </div>
+        
+        <!-- Content -->
+        <div class="js-content">
+          <div class="js-line">
+            <span class="js-keyword">const</span>&nbsp;<span class="js-variable">technicalInterests</span>&nbsp;<span class="js-operator">=</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">technicalExpertise</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"🅰️&nbsp;Angular&nbsp;-&nbsp;Frontend&nbsp;framework&nbsp;for&nbsp;dynamic&nbsp;web&nbsp;applications"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"⚡&nbsp;JavaScript&nbsp;-&nbsp;Core&nbsp;language&nbsp;for&nbsp;web&nbsp;development"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"🔷&nbsp;.NET&nbsp;-&nbsp;Backend&nbsp;services&nbsp;and&nbsp;API&nbsp;development"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"📱&nbsp;Flutter&nbsp;-&nbsp;Cross-platform&nbsp;mobile&nbsp;app&nbsp;development"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"☁️&nbsp;AWS&nbsp;-&nbsp;DynamoDB,&nbsp;Redshift,&nbsp;MySQL,&nbsp;OpenSearch"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"🔥&nbsp;Firebase&nbsp;-&nbsp;Real-time&nbsp;database&nbsp;and&nbsp;authentication"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"📊&nbsp;Analytics&nbsp;-&nbsp;Adjust,&nbsp;Meta,&nbsp;Firebase&nbsp;for&nbsp;performance&nbsp;tracking"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"💳&nbsp;Payment&nbsp;Integration&nbsp;-&nbsp;Razorpay,&nbsp;Bob&nbsp;payment&nbsp;gateways"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">industryFocus</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">primary</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"MVAS&nbsp;(Mobile&nbsp;Value&nbsp;Added&nbsp;Services)"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">applications</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Food&nbsp;delivery,&nbsp;Employee&nbsp;management&nbsp;systems"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">specialization</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Third-party&nbsp;integrations&nbsp;and&nbsp;API&nbsp;management"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">currentProjects</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"🌐&nbsp;Full-stack&nbsp;MVAS&nbsp;applications&nbsp;using&nbsp;Angular&nbsp;and&nbsp;.NET"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"🔐&nbsp;OTP&nbsp;and&nbsp;VCODE&nbsp;integration&nbsp;with&nbsp;DynamoDB"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"🛡️&nbsp;Anti-fraud&nbsp;measures&nbsp;implementation"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"📈&nbsp;Performance&nbsp;optimization&nbsp;using&nbsp;OpenSearch"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"🚨&nbsp;Automated&nbsp;alerts&nbsp;via&nbsp;email,&nbsp;Telegram,&nbsp;and&nbsp;Jira"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"🌍&nbsp;White-label&nbsp;projects&nbsp;for&nbsp;India&nbsp;and&nbsp;Lebanon&nbsp;markets"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">]</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-property">technicalSkills</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">stateManagement</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Provider&nbsp;pattern&nbsp;in&nbsp;Flutter"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">caching</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Performance&nbsp;optimization&nbsp;mechanisms"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">localization</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Multi-language&nbsp;support&nbsp;implementation"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">deployment</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Android&nbsp;and&nbsp;iOS&nbsp;platform&nbsp;deployment"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">monitoring</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"Production&nbsp;performance&nbsp;monitoring"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span>
+          </div>
+          <div class="js-line">
+            <span class="js-bracket">{{ '}' }};</span>
+          </div>
+          <div class="js-line js-empty"></div>
+          <div class="js-line">
+            <span class="js-keyword">export</span>&nbsp;<span class="js-keyword">default</span>&nbsp;<span class="js-variable">technicalInterests</span><span class="js-semicolon">;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

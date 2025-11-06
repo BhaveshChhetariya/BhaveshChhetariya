@@ -1286,7 +1286,97 @@
   }
 }
 
-// Responsive design for JSON and JS editors
+/* Universal Line Number and Content Alignment Fix */
+.js-editor, .yaml-editor, .markdown-editor, .json-editor, .text-editor {
+  .line-numbers {
+    font-size: 14px !important; /* Match content font size */
+    line-height: 1.5 !important; /* Match content line height */
+    
+    span {
+      display: block;
+      height: 21px; /* 14px * 1.5 = 21px */
+      line-height: 21px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .js-content, .yaml-content, .markdown-content, .json-content, .text-content {
+    font-size: 14px;
+    line-height: 1.5;
+    
+    .js-line, .yaml-line, .md-line, .json-line, .text-line {
+      height: 21px; /* Match line number height exactly */
+      line-height: 21px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      
+      &.js-empty, &.yaml-empty, &.md-empty, &.json-empty, &.text-empty {
+        height: 21px !important; /* Force same height for empty lines */
+        min-height: 21px !important;
+        line-height: 21px !important;
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .js-editor, .yaml-editor, .markdown-editor, .json-editor, .text-editor {
+    .line-numbers {
+      font-size: 13px !important;
+      
+      span {
+        height: 19.5px; /* 13px * 1.5 = 19.5px */
+        line-height: 19.5px;
+      }
+    }
+
+    .js-content, .yaml-content, .markdown-content, .json-content, .text-content {
+      font-size: 13px;
+      
+      .js-line, .yaml-line, .md-line, .json-line, .text-line {
+        height: 19.5px;
+        line-height: 19.5px;
+        
+        &.js-empty, &.yaml-empty, &.md-empty, &.json-empty, &.text-empty {
+          height: 19.5px !important;
+          min-height: 19.5px !important;
+          line-height: 19.5px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .js-editor, .yaml-editor, .markdown-editor, .json-editor, .text-editor {
+    .line-numbers {
+      font-size: 12px !important;
+      
+      span {
+        height: 18px; /* 12px * 1.5 = 18px */
+        line-height: 18px;
+      }
+    }
+
+    .js-content, .yaml-content, .markdown-content, .json-content, .text-content {
+      font-size: 12px;
+      
+      .js-line, .yaml-line, .md-line, .json-line, .text-line {
+        height: 18px;
+        line-height: 18px;
+        
+        &.js-empty, &.yaml-empty, &.md-empty, &.json-empty, &.text-empty {
+          height: 18px !important;
+          min-height: 18px !important;
+          line-height: 18px !important;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 768px) {
   .json-editor, .js-editor {
     font-size: 13px;
