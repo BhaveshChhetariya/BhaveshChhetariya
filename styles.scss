@@ -363,3 +363,21 @@ body {
     padding-right: env(safe-area-inset-right);
   }
 }
+/* Extended VS Code Color Variables for Syntax Highlighting */
+:root {
+  /* Syntax Highlighting Colors */
+  --vscode-comment: #6a9955;
+  --vscode-keyword: #569cd6;
+  --vscode-string: #ce9178;
+  --vscode-number: #b5cea8;
+  --vscode-property: #9cdcfe;
+  --vscode-variable: #4fc3f7;
+  --vscode-operator: #d4d4d4;
+  --vscode-bracket: #ffd700;
+  --vscode-punctuation: #d4d4d4;
+  
+  /* Font Settings */
+  --font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  --font-size: 14px;
+  --line-height: 1.5;
+}

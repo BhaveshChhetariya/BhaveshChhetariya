@@ -1,0 +1,60 @@
+<div class="certifications-container fade-in">
+  
+  <div class="code-editor" role="region" aria-label="Certifications code editor">
+    <div class="line-numbers" aria-hidden="true">
+      <span *ngFor="let line of getLineNumbers(); let i = index">{{ i + 1 }}</span>
+    </div>
+    <div class="code-content">
+      <div class="yaml-line">
+        <span class="yaml-comment">#&nbsp;Professional&nbsp;Certifications&nbsp;and&nbsp;Achievements</span>
+      </div>
+      <div class="yaml-line">
+        <span class="yaml-comment">#&nbsp;Demonstrating&nbsp;continuous&nbsp;learning&nbsp;and&nbsp;expertise</span>
+      </div>
+      <div class="yaml-line yaml-empty"></div>
+      <div class="yaml-line">
+        <span class="yaml-property">certifications</span><span class="yaml-colon">:</span>
+      </div>
+      
+      <ng-container *ngFor="let cert of certifications; let last = last">
+        <div class="yaml-line">
+          &nbsp;&nbsp;<span class="yaml-dash">-</span>&nbsp;<span class="yaml-property">name</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">{{ cert.name }}</span>
+        </div>
+        <div class="yaml-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-property">issuer</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">{{ cert.issuer }}</span>
+        </div>
+        <div class="yaml-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-property">date</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">{{ cert.date }}</span>
+        </div>
+        <div class="yaml-line" *ngIf="cert.credentialId">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-property">credential_id</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">{{ cert.credentialId }}</span>
+        </div>
+        <div class="yaml-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-property">status</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">active</span>
+        </div>
+        <div class="yaml-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-property">verification</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">verified</span>
+        </div>
+        <div class="yaml-line yaml-empty" *ngIf="!last"></div>
+      </ng-container>
+      
+      <div class="yaml-line yaml-empty"></div>
+      <div class="yaml-line">
+        <span class="yaml-property">learning_goals</span><span class="yaml-colon">:</span>
+      </div>
+      
+      <ng-container *ngFor="let goal of learningGoals">
+        <div class="yaml-line">
+          &nbsp;&nbsp;<span class="yaml-dash">-</span>&nbsp;<span class="yaml-property">technology</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">{{ goal.technology }}</span>
+        </div>
+        <div class="yaml-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-property">priority</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">{{ goal.priority }}</span>
+        </div>
+        <div class="yaml-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-property">timeline</span><span class="yaml-colon">:</span>&nbsp;<span class="yaml-string">{{ goal.timeline }}</span>
+        </div>
+        <div class="yaml-line yaml-empty"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>

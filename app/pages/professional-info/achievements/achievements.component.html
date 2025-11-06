@@ -1,0 +1,69 @@
+<div class="achievements-container fade-in">
+  
+  <div class="code-editor" role="region" aria-label="Achievements code editor">
+    <div class="line-numbers" aria-hidden="true">
+      <span *ngFor="let line of getLineNumbers(); let i = index">{{ i + 1 }}</span>
+    </div>
+    <div class="code-content">
+      <div class="md-line">
+        <span class="md-header">#&nbsp;Professional&nbsp;Achievements</span> 
+      </div>
+      <div class="md-line md-empty"></div>
+      <div class="md-line">
+        <span class="md-text">A&nbsp;collection&nbsp;of&nbsp;milestones&nbsp;and&nbsp;accomplishments&nbsp;that&nbsp;showcase</span>
+      </div>
+      <div class="md-line">
+        <span class="md-text">my&nbsp;growth&nbsp;as&nbsp;a&nbsp;software&nbsp;developer&nbsp;and&nbsp;team&nbsp;contributor.</span>
+      </div>
+      <div class="md-line md-empty"></div>
+      <div class="md-line">
+        <span class="md-header">##&nbsp;Key&nbsp;Accomplishments</span>
+      </div>
+      <div class="md-line md-empty"></div>
+      
+      <ng-container *ngFor="let achievement of achievements">
+        <div class="md-line">
+          <span class="md-bullet">-</span>&nbsp;<span class="md-text">{{ achievement }}</span>
+        </div>
+      </ng-container>
+      
+      <div class="md-line md-empty"></div>
+      <div class="md-line">
+        <span class="md-header">##&nbsp;Impact&nbsp;Metrics</span>
+      </div>
+      <div class="md-line md-empty"></div>
+      
+      <ng-container *ngFor="let metric of impactMetrics">
+        <div class="md-line">
+          <span class="md-bullet">*</span>&nbsp;<span class="md-bold">**{{ metric.title }}:**</span>&nbsp;<span class="md-text">{{ metric.value }}</span>
+        </div>
+        <div class="md-line">
+          &nbsp;&nbsp;<span class="md-text">{{ metric.description }}</span>
+        </div>
+        <div class="md-line md-empty"></div>
+      </ng-container>
+      
+      <div class="md-line">
+        <span class="md-header">##&nbsp;Recognition</span>
+      </div>
+      <div class="md-line md-empty"></div>
+      
+      <ng-container *ngFor="let recognition of recognitions">
+        <div class="md-line">
+          <span class="md-number">{{ recognition.year }}.</span>&nbsp;<span class="md-bold">**{{ recognition.title }}**</span>
+        </div>
+        <div class="md-line">
+          &nbsp;&nbsp;&nbsp;<span class="md-text">{{ recognition.description }}</span>
+        </div>
+        <div class="md-line md-empty"></div>
+      </ng-container>
+      
+      <div class="md-line">
+        <span class="md-quote">&gt;&nbsp;*"Continuous&nbsp;improvement&nbsp;is&nbsp;better&nbsp;than&nbsp;delayed&nbsp;perfection."*</span>
+      </div>
+      <div class="md-line">
+        <span class="md-quote">&gt;&nbsp;—&nbsp;Mark&nbsp;Twain</span>
+      </div>
+    </div>
+  </div>
+</div>

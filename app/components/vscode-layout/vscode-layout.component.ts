@@ -63,10 +63,10 @@ export class VscodeLayoutComponent implements OnInit {
       active: false,
       expanded: false,
       children: [
-        { name: '_experience', route: '/professional-info?section=experience', icon: 'fas fa-building', active: false },
-        { name: '_hard-skills', route: '/professional-info?section=skills', icon: 'fas fa-code', active: false },
-        { name: '_certifications', route: '/professional-info?section=certifications', icon: 'fas fa-certificate', active: false },
-        { name: '_achievements', route: '/professional-info?section=achievements', icon: 'fas fa-trophy', active: false }
+        { name: '_experience', route: '/professional-info/experience', icon: 'fas fa-building', active: false },
+        { name: '_hard-skills', route: '/professional-info/skills', icon: 'fas fa-code', active: false },
+        { name: '_certifications', route: '/professional-info/certifications', icon: 'fas fa-certificate', active: false },
+        { name: '_achievements', route: '/professional-info/achievements', icon: 'fas fa-trophy', active: false }
       ]
     },
     {

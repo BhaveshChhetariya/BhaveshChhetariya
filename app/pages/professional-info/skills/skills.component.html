@@ -1,0 +1,90 @@
+<div class="skills-container fade-in">
+  
+  <div class="code-editor" role="region" aria-label="Skills code editor">
+    <div class="line-numbers" aria-hidden="true">
+      <span *ngFor="let line of getLineNumbers(); let i = index">{{ i + 1 }}</span>
+    </div>
+    <div class="code-content">
+      <div class="js-line">
+        <span class="js-bracket">{{ '{' }}</span>
+      </div>
+      <div class="js-line">
+        &nbsp;&nbsp;<span class="js-property">"skillCategories"</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+      </div>
+      
+      <ng-container *ngFor="let category of skillCategories; let catLast = last">
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '{' }}</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"name"</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ category.name }}"</span><span class="js-comma">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"icon"</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ category.icon }}"</span><span class="js-comma">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"skills"</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+        </div>
+        
+        <ng-container *ngFor="let skill of getSkillsByCategory(category.key); let skillLast = last">
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '{' }}</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"name"</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ skill.name }}"</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"level"</span><span class="js-colon">:</span>&nbsp;<span class="js-number">{{ skill.level }}</span><span class="js-comma">,</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"proficiency"</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ getProficiencyLevel(skill.level) }}"</span>
+          </div>
+          <div class="js-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span><span class="js-comma" *ngIf="!skillLast">,</span>
+          </div>
+        </ng-container>
+        
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">]</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span><span class="js-comma" *ngIf="!catLast">,</span>
+        </div>
+        <div class="js-line js-empty" *ngIf="!catLast"></div>
+      </ng-container>
+      
+      <div class="js-line">
+        &nbsp;&nbsp;<span class="js-bracket">]</span><span class="js-comma">,</span>
+      </div>
+      <div class="js-line js-empty"></div>
+      <div class="js-line">
+        &nbsp;&nbsp;<span class="js-property">"services"</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+      </div>
+      
+      <ng-container *ngFor="let service of services; let serviceLast = last">
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '{' }}</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"title"</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ service.title }}"</span><span class="js-comma">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"icon"</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ service.icon }}"</span><span class="js-comma">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">"description"</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ service.description }}"</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span><span class="js-comma" *ngIf="!serviceLast">,</span>
+        </div>
+      </ng-container>
+      
+      <div class="js-line">
+        &nbsp;&nbsp;<span class="js-bracket">]</span>
+      </div>
+      <div class="js-line">
+        <span class="js-bracket">{{ '}' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

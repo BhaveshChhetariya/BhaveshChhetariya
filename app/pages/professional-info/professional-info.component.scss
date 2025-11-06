@@ -521,3 +521,153 @@
     display: none;
   }
 }
+
+// YAML Syntax Highlighting
+.yaml-line {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(var(--font-size) * var(--line-height));
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  white-space: pre;
+  
+  &.yaml-empty {
+    min-height: calc(var(--font-size) * var(--line-height));
+  }
+}
+
+.yaml-comment {
+  color: var(--vscode-comment);
+  font-style: italic;
+}
+
+.yaml-property {
+  color: var(--vscode-property);
+  font-weight: 500;
+}
+
+.yaml-colon {
+  color: var(--vscode-punctuation);
+}
+
+.yaml-string {
+  color: var(--vscode-string);
+}
+
+.yaml-dash {
+  color: var(--vscode-keyword);
+  font-weight: bold;
+}
+
+// Markdown Syntax Highlighting
+.md-line {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(var(--font-size) * var(--line-height));
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  white-space: pre;
+  
+  &.md-empty {
+    min-height: calc(var(--font-size) * var(--line-height));
+  }
+}
+
+.md-header {
+  color: var(--vscode-accent);
+  font-weight: bold;
+}
+
+.md-text {
+  color: var(--vscode-text);
+}
+
+.md-bullet {
+  color: var(--vscode-keyword);
+  font-weight: bold;
+}
+
+.md-number {
+  color: var(--vscode-number);
+  font-weight: bold;
+}
+
+.md-bold {
+  color: var(--vscode-text);
+  font-weight: bold;
+}
+
+.md-quote {
+  color: var(--vscode-comment);
+  font-style: italic;
+}
+
+// JavaScript Syntax Highlighting (Enhanced)
+.js-line {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(var(--font-size) * var(--line-height));
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  white-space: pre;
+  
+  &.js-empty {
+    min-height: calc(var(--font-size) * var(--line-height));
+  }
+}
+
+.js-comment {
+  color: var(--vscode-comment);
+  font-style: italic;
+}
+
+.js-keyword {
+  color: var(--vscode-keyword);
+  font-weight: bold;
+}
+
+.js-variable {
+  color: var(--vscode-variable);
+}
+
+.js-operator {
+  color: var(--vscode-operator);
+}
+
+.js-bracket {
+  color: var(--vscode-bracket);
+}
+
+.js-property {
+  color: var(--vscode-property);
+}
+
+.js-colon {
+  color: var(--vscode-punctuation);
+}
+
+.js-string {
+  color: var(--vscode-string);
+}
+
+.js-number {
+  color: var(--vscode-number);
+}
+
+.js-comma {
+  color: var(--vscode-punctuation);
+}
+
+// Component-specific containers
+.experience-container,
+.skills-container,
+.certifications-container,
+.achievements-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

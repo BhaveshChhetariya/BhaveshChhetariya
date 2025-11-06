@@ -1,0 +1,64 @@
+<div class="experience-container fade-in">
+  
+  <div class="code-editor" role="region" aria-label="Experience code editor">
+    <div class="line-numbers" aria-hidden="true">
+      <span *ngFor="let line of getLineNumbers(); let i = index">{{ i + 1 }}</span>
+    </div>
+    <div class="code-content">
+      <div class="js-line">
+        <span class="js-comment">/**</span>
+      </div>
+      <div class="js-line">
+        &nbsp;<span class="js-comment">*&nbsp;Professional&nbsp;Experience&nbsp;Timeline</span>
+      </div>
+      <div class="js-line">
+        &nbsp;<span class="js-comment">*/</span>
+      </div>
+      <div class="js-line js-empty"></div>
+      <div class="js-line">
+        <span class="js-keyword">const</span>&nbsp;<span class="js-variable">workExperience</span>&nbsp;<span class="js-operator">=</span>&nbsp;<span class="js-bracket">[</span>
+      </div>
+      
+      <ng-container *ngFor="let exp of experience; let last = last">
+        <div class="js-line">
+          &nbsp;&nbsp;<span class="js-bracket">{{ '{' }}</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">position</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ exp.position }}"</span><span class="js-comma">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">company</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ exp.company }}"</span><span class="js-comma">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">duration</span><span class="js-colon">:</span>&nbsp;<span class="js-string">"{{ exp.duration }}"</span><span class="js-comma">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">responsibilities</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+        </div>
+        <div class="js-line" *ngFor="let desc of exp.description; let descLast = last">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"{{ desc }}"</span><span class="js-comma" *ngIf="!descLast">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">]</span><span class="js-comma">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-property">technologies</span><span class="js-colon">:</span>&nbsp;<span class="js-bracket">[</span>
+        </div>
+        <div class="js-line" *ngFor="let tech of exp.technologies; let techLast = last">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js-string">"{{ tech }}"</span><span class="js-comma" *ngIf="!techLast">,</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="js-bracket">]</span>
+        </div>
+        <div class="js-line">
+          &nbsp;&nbsp;<span class="js-bracket">{{ '}' }}</span><span class="js-comma" *ngIf="!last">,</span>
+        </div>
+        <div class="js-line js-empty" *ngIf="!last"></div>
+      </ng-container>
+      
+      <div class="js-line">
+        <span class="js-bracket">];</span>
+      </div>
+    </div>
+  </div>
+</div>

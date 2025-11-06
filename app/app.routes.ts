@@ -42,7 +42,29 @@ export const routes: Routes = [
   },
   {
     path: 'professional-info',
-    loadComponent: () => import('./pages/professional-info/professional-info.component').then(m => m.ProfessionalInfoComponent)
+    children: [
+      {
+        path: '',
+        redirectTo: 'experience',
+        pathMatch: 'full'
+      },
+      {
+        path: 'experience',
+        loadComponent: () => import('./pages/professional-info/experience/experience.component').then(m => m.ExperienceComponent)
+      },
+      {
+        path: 'skills',
+        loadComponent: () => import('./pages/professional-info/skills/skills.component').then(m => m.SkillsComponent)
+      },
+      {
+        path: 'certifications',
+        loadComponent: () => import('./pages/professional-info/certifications/certifications.component').then(m => m.CertificationsComponent)
+      },
+      {
+        path: 'achievements',
+        loadComponent: () => import('./pages/professional-info/achievements/achievements.component').then(m => m.AchievementsComponent)
+      }
+    ]
   },
   {
     path: 'projects',
