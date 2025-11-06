@@ -1,0 +1,17 @@
+{
+  "name": "VSCode Portfolio - Bhavesh",
+  "short_name": "VSCode Portfolio",
+  "description": "A portfolio website designed to mimic VSCode interface",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e1e1e",
+  "theme_color": "#4fc3f7",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["portfolio", "developer", "showcase"]
+}
